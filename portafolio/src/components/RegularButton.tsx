@@ -4,7 +4,7 @@ const RegularButton = styled.button`
   cursor: ${(props) => props.$customCursor || "pointer"};
   border-radius: ${(props) => props.$customBorderRadius || "5px"};
   margin: ${(props) => props.$customMargin || "0"};
-  padding: ${(props) => props.$customPadding || ".3rem"};
+  padding: ${(props) => props.$customPadding || "1.3rem"};
   text-align: center;
   display: inline-block;
   font-size: ${(props) => props.$customfontsize || "16px"};

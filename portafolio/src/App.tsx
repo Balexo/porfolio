@@ -1,13 +1,23 @@
 import Home from "./pages/Home";
+import styled from "styled-components";
 
 function App() {
   return (
     <>
-      <div className="App">
+      <AppStyle className="App">
         <Home />
-      </div>
+      </AppStyle>
     </>
   );
 }
 
 export default App;
+
+const AppStyle = styled.div`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+`;
