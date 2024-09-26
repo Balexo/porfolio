@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 interface skillsItems {
   label: string;
   icon: React.ElementType;
@@ -10,17 +12,75 @@ interface SkillsProps {
 
 const Skills: React.FC<SkillsProps> = ({ skillsItems }) => {
   return (
-    <section>
-      <ul className="skills-user">
-        {skillsItems.map((item) => (
-          <li key={item.label} className={`${item.label}`}>
+    <SkillsStyled className="SkillsStyled">
+      {skillsItems.map((item) => (
+        <IndividualSkillStyled key={item.label} className={`${item.label}`}>
+          <StyledIcon title={item.label} className="skill-icon">
             <item.icon />
             <span className="skill-porcentage">{item.porcentage}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
+          </StyledIcon>
+
+          <ProgressBar>
+            <Progress
+              className="skill-bar-progress"
+              style={{ width: `${item.porcentage}` }}
+            />
+          </ProgressBar>
+        </IndividualSkillStyled>
+      ))}
+    </SkillsStyled>
   );
 };
 
 export default Skills;
+
+const SkillsStyled = styled.li`
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+`;
+
+const IndividualSkillStyled = styled.li`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  alig-items: center;
+`;
+
+const StyledIcon = styled.div`
+  display: flex;
+  font-size: 2.5rem;
+  align-self: center;
+  margin-bottom: 0.5rem;
+
+  .skill-porcentage {
+    margin-left: 1rem;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 35px;
+
+    .skill-porcentage {
+      font-size: 25px;
+    }
+  }
+`;
+
+const ProgressBar = styled.div`
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+`;
+
+const Progress = styled.div`
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
+`;

@@ -6,9 +6,10 @@ import { FaCss3Alt } from "react-icons/fa";
 import { FaNode } from "react-icons/fa6";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
-// import { SiMysql } from "react-icons/si";
-// import { SiJest } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { SiJest } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 export const menuItems = [
   { label: "Sobre mi", sectionId: "about-me" },
@@ -18,9 +19,18 @@ export const menuItems = [
 ];
 
 export const skillsItems = [
-  { label: "JavaScript", icon: SiJavascript, porcentage: "70%" },
+  { label: "JavaScript", icon: SiJavascript, porcentage: "20%" },
   { label: "React", icon: FaReact, porcentage: "70%" },
   { label: "Redux", icon: SiRedux, porcentage: "70%" },
+  { label: "Node.js", icon: FaNode, porcentage: "70%" },
+  { label: "Express", icon: SiExpress, porcentage: "70%" },
+  { label: "MongoDB", icon: SiMongodb, porcentage: "70%" },
+  { label: "MySQL", icon: SiMysql, porcentage: "70%" },
+  { label: "HTML5", icon: FaHtml5, porcentage: "70%" },
+  { label: "CSS", icon: FaCss3Alt, porcentage: "70%" },
+  { label: "GitHub", icon: FaGithub, porcentage: "70%" },
+  { label: "Jest", icon: SiJest, porcentage: "70%" },
+  { label: "AWS", icon: FaAws, porcentage: "70%" },
 ];
 
 export const proyectsItems = [

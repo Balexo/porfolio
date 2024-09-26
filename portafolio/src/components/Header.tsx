@@ -18,7 +18,13 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   const handleScrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -60;
+      const y =
+        sectionElement.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
       setShowMenu(false);
     }
   };
