@@ -11,6 +11,15 @@ import { SiJest } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
+import { FaPeopleCarryBox } from "react-icons/fa6";
+import { FaRocket } from "react-icons/fa";
+import { FaScaleBalanced } from "react-icons/fa6";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaLightbulb } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
+import { FaTree } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
+
 export const menuItems = [
   { label: "Sobre mi", sectionId: "about-me" },
   { label: "Skills", sectionId: "skills" },
@@ -31,6 +40,23 @@ export const skillsItems = [
   { label: "GitHub", icon: FaGithub, porcentage: "70%" },
   { label: "Jest", icon: SiJest, porcentage: "70%" },
   { label: "AWS", icon: FaAws, porcentage: "70%" },
+];
+
+export const learningSkills = [
+  { icon: SiJavascript, text: "Siempre" },
+  { icon: FaNode, text: "Siempre es necesario mejorar" },
+  { icon: SiMongodb, text: "Siempre es necesario mejorar" },
+];
+
+export const softSkills = [
+  { icon: FaPeopleCarryBox, text: "Trabajo en equipo" },
+  { icon: FaRocket, text: "Motivación" },
+  { icon: FaScaleBalanced, text: "Responsabilidad" },
+  { icon: FaMagnifyingGlass, text: "Analítico" },
+  { icon: FaLightbulb, text: "Curiosidad" },
+  { icon: FaBookOpen, text: "Aprendizaje continuo" },
+  { icon: FaTree, text: "Resiliencia" },
+  { icon: FaCalendarAlt, text: "Organización" },
 ];
 
 export const proyectsItems = [

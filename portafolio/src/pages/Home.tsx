@@ -1,9 +1,16 @@
 import Header from "../components/Header";
 import Skills from "../components/Skills";
+import OtherSkills from "../components/OtherSkills";
 import AboutMe from "../components/AboutMe";
 import Proyects from "../components/Proyects";
 import { Contact } from "../components/Contact";
-import { menuItems, skillsItems, proyectsItems } from "./HomeData";
+import {
+  menuItems,
+  skillsItems,
+  proyectsItems,
+  learningSkills,
+  softSkills,
+} from "./HomeData";
 import styled from "styled-components";
 
 const Home = () => {
@@ -19,6 +26,18 @@ const Home = () => {
         <section id="skills">
           <h1>Skills</h1>
           <Skills skillsItems={skillsItems} />
+          <h1>Aprendiendo Skills</h1>
+          <OtherSkills
+            learningSkills={learningSkills}
+            columns={2}
+            columnsMax768px={1}
+          />
+          <h1>Habilidades blandas</h1>
+          <OtherSkills
+            learningSkills={softSkills}
+            columns={4}
+            columnsMax768px={2}
+          />
         </section>
 
         <section id="projects">
