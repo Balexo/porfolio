@@ -19,20 +19,20 @@ const Home = () => {
       <Header menuItems={menuItems} />
       <StyledBody className="StyledBody">
         <section id="about-me">
-          <h1>Sobre mi</h1>
+          <StyledH1 className="title">Sobre mi</StyledH1>
           <AboutMe />
         </section>
 
         <section id="skills">
-          <h1>Skills</h1>
+          <StyledH1 className="title">Skills</StyledH1>
           <Skills skillsItems={skillsItems} />
-          <h1>Aprendiendo Skills</h1>
+          <StyledH1>Aprendiendo Skills</StyledH1>
           <OtherSkills
             learningSkills={learningSkills}
             columns={2}
             columnsMax768px={1}
           />
-          <h1>Habilidades blandas</h1>
+          <StyledH1 className="title">Habilidades blandas</StyledH1>
           <OtherSkills
             learningSkills={softSkills}
             columns={4}
@@ -41,12 +41,12 @@ const Home = () => {
         </section>
 
         <section id="projects">
-          <h1>Proyectos</h1>
+          <StyledH1 className="title">Proyectos</StyledH1>
           <Proyects proyectsItems={proyectsItems} />
         </section>
 
         <section id="contact">
-          <h1>Contacto</h1>
+          <StyledH1 className="title">Contacto</StyledH1>
           <Contact />
         </section>
       </StyledBody>
@@ -64,4 +64,9 @@ const StyledBody = styled.div`
   @media (max-width: 768px) {
     margin: 70px 0px 0px 0px;
   }
+`;
+
+const StyledH1 = styled.h1`
+  text-align: center;
+  font-size: 2rem;
 `;

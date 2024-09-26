@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useWindowWith from "../hook/WindowWith";
+import useWindowWith from "../hooks/useWindowWith";
 
 interface learningSkills {
   icon: React.ElementType;
