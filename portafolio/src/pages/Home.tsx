@@ -1,3 +1,4 @@
+import Landing from "../components/Landing";
 import Header from "../components/Header";
 import Skills from "../components/Skills";
 import OtherSkills from "../components/OtherSkills";
@@ -12,21 +13,26 @@ import {
   softSkills,
 } from "./HomeData";
 import styled from "styled-components";
+import RegularButton from "../components/shared/RegularButton";
+import DownloadCV from "../components/downloadCV";
 
 const Home = () => {
   return (
     <>
       <Header menuItems={menuItems} />
       <StyledBody className="StyledBody">
+        <DownloadCV />
+        <RegularButton className="up">Subir</RegularButton>
+        <Landing></Landing>
         <section id="about-me">
-          <StyledH1 className="title">Sobre mi</StyledH1>
+          <StyledH1 className="title without-margin">Sobre mi</StyledH1>
           <AboutMe />
         </section>
 
         <section id="skills">
           <StyledH1 className="title">Skills</StyledH1>
           <Skills skillsItems={skillsItems} />
-          <StyledH1>Aprendiendo Skills</StyledH1>
+          <StyledH1 className="title">Aprendiendo Skills</StyledH1>
           <OtherSkills
             learningSkills={learningSkills}
             columns={2}
@@ -57,7 +63,7 @@ const Home = () => {
 export default Home;
 
 const StyledBody = styled.div`
-  margin: 1rem 0rem 0rem 16rem;
+  margin: 0rem 0rem 0rem 16rem;
   display: block;
   flex-direction: column;
 
@@ -67,6 +73,11 @@ const StyledBody = styled.div`
 `;
 
 const StyledH1 = styled.h1`
+  margin-top: 5rem;
   text-align: center;
   font-size: 2rem;
+
+  &.without-margin {
+    margin-top: 0rem;
+  }
 `;

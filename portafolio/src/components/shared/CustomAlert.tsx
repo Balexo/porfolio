@@ -9,13 +9,13 @@ const CustomAlert: React.FC<CustomAlertProps> = ({ message, type }) => {
   return (
     <>
       {type === "error" ? (
-        <ErrorMessageStyled>
+        <ErrorMessageStyled className="error-message">
           {message.map((msg, index) => (
             <p key={index}>{msg}</p>
           ))}
         </ErrorMessageStyled>
       ) : (
-        <SuccesMessageStyled>
+        <SuccesMessageStyled className="success-message">
           {message.map((msg, index) => (
             <p key={index}>{msg}</p>
           ))}

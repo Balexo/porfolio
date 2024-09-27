@@ -28,24 +28,24 @@ export const menuItems = [
 ];
 
 export const skillsItems = [
-  { label: "JavaScript", icon: SiJavascript, porcentage: "20%" },
-  { label: "React", icon: FaReact, porcentage: "70%" },
-  { label: "Redux", icon: SiRedux, porcentage: "70%" },
-  { label: "Node.js", icon: FaNode, porcentage: "70%" },
-  { label: "Express", icon: SiExpress, porcentage: "70%" },
-  { label: "MongoDB", icon: SiMongodb, porcentage: "70%" },
-  { label: "MySQL", icon: SiMysql, porcentage: "70%" },
+  { label: "JavaScript", icon: SiJavascript, porcentage: "60%" },
   { label: "HTML5", icon: FaHtml5, porcentage: "70%" },
   { label: "CSS", icon: FaCss3Alt, porcentage: "70%" },
-  { label: "GitHub", icon: FaGithub, porcentage: "70%" },
-  { label: "Jest", icon: SiJest, porcentage: "70%" },
-  { label: "AWS", icon: FaAws, porcentage: "70%" },
+  { label: "React", icon: FaReact, porcentage: "50%" },
+  { label: "Node.js", icon: FaNode, porcentage: "40%" },
+  { label: "Express", icon: SiExpress, porcentage: "40%" },
+  { label: "MongoDB", icon: SiMongodb, porcentage: "30%" },
+  { label: "MySQL", icon: SiMysql, porcentage: "30%" },
+  { label: "GitHub", icon: FaGithub, porcentage: "60%" },
+  { label: "Redux", icon: SiRedux, porcentage: "40%" },
+  { label: "Jest", icon: SiJest, porcentage: "30%" },
+  { label: "AWS", icon: FaAws, porcentage: "20%" },
 ];
 
 export const learningSkills = [
-  { icon: SiJavascript, text: "Siempre" },
-  { icon: FaNode, text: "Siempre es necesario mejorar" },
-  { icon: SiMongodb, text: "Siempre es necesario mejorar" },
+  { icon: SiJavascript, text: "Profundizando en ES6+" },
+  { icon: FaNode, text: "Mejorando en la creación de APIs" },
+  { icon: SiMongodb, text: "Optimizando consultas y agregaciones" },
 ];
 
 export const softSkills = [
@@ -80,6 +80,25 @@ export const proyectsItems = [
       { icon: SiMongodb },
       { icon: FaAws },
     ],
-    summary: "Página web de artesanos",
+    summary:
+      "Plataforma de comercio electrónico que conecta a artesanos con compradores. La aplicación cuenta con una interfaz intuitiva que permite a los usuarios buscar y comprar productos de manera fácil y segura. En el backend, se ha implementado una API que gestiona la base de datos de productos, usuarios y pedidos, además de un sistema de autenticación seguro. La plataforma incluye funcionalidades como chat en vivo, paginación, múltiples idiomas y un sistema de envío de correos electrónicos automatizados.",
+  },
+  {
+    label: "Porfolio",
+    linkGitHub: "https://github.com/Balexo/portafolio",
+    image: {
+      src: "../../public/icraftyouImagen.JPG",
+      alt: "Proyecto 2",
+      href: "https://pagina-del-proyecto2.com",
+    },
+    link: "https://icraftyou.es/",
+    icon: [
+      { icon: FaReact },
+      { icon: FaHtml5 },
+      { icon: FaCss3Alt },
+      { icon: FaAws },
+    ],
+    summary:
+      "Página web hecha en React donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px. ",
   },
 ];

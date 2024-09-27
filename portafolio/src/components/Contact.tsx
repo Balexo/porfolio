@@ -1,13 +1,13 @@
-import RegularButton from "./RegularButton";
+import RegularButton from "./shared/RegularButton";
 import styled from "styled-components";
 import { useState } from "react";
 import { useForm } from "@formspree/react";
-import CustomAlert from "./CustomAlert";
+import CustomAlert from "./shared/CustomAlert";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { LatLngExpression } from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// import { LatLngExpression } from "leaflet";
-
-// const position: LatLngExpression = [42.8808, -8.54];
+const position: LatLngExpression = [42.8808, -8.54];
 
 export const Contact: React.FC = () => {
   const [name, setName] = useState("");
@@ -57,12 +57,18 @@ export const Contact: React.FC = () => {
       console.log(state);
       console.log(Response);
 
-      if (state.succeeded) {
-        setSuccessMessage(["Correo enviado correctamente!"]);
-        setMessageValidations([]);
-        setName("");
-        setEmail("");
-        setMessage("");
+      try {
+        if (state.succeeded) {
+          setSuccessMessage([
+            "Correo enviado correctamente! Gracias por contactar, pronto recibirás respuesta.",
+          ]);
+          setMessageValidations([]);
+          setName("");
+          setEmail("");
+          setMessage("");
+        }
+      } catch {
+        setMessageValidations(["Parece que hubo un error"]);
       }
     }
   };
@@ -70,13 +76,13 @@ export const Contact: React.FC = () => {
   return (
     <>
       <StyledContact className="styledcontact">
-        {messageValidations.length > 0 && (
-          <CustomAlert message={messageValidations} type={"error"} />
-        )}
-        {successMessage && (
-          <CustomAlert message={successMessage} type={"success"} />
-        )}
         <StyledForm className="styledform" onSubmit={handleFormSubmit}>
+          {messageValidations.length > 0 && (
+            <CustomAlert message={messageValidations} type={"error"} />
+          )}
+          {successMessage && (
+            <CustomAlert message={successMessage} type={"success"} />
+          )}
           <StyledLabel htmlFor="name" className="styledlabel">
             Nombre:
           </StyledLabel>
@@ -133,17 +139,17 @@ export const Contact: React.FC = () => {
           </RegularButton>
         </StyledForm>
 
-        {/* <StyledMap className="StyledMap">
-        <MapContainer className="MapContainer" center={position} zoom={10}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <Marker position={position}>
-            <Popup>{<p>Oscar Vallejo</p>}</Popup>
-          </Marker>
-        </MapContainer>
-      </StyledMap> */}
+        <StyledMap className="StyledMap">
+          <MapContainer className="MapContainer" center={position} zoom={10}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={position}>
+              <Popup>{<p>Oscar Vallejo</p>}</Popup>
+            </Marker>
+          </MapContainer>
+        </StyledMap>
       </StyledContact>
     </>
   );
@@ -152,6 +158,7 @@ export const Contact: React.FC = () => {
 const StyledContact = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
 `;
 
 const StyledForm = styled.form`
@@ -175,7 +182,14 @@ const StyledTextarea = styled.textarea`
   width: 100%;
 `;
 
-// const StyledMap = styled.div`
-//   height: 250px;
-//   width: auto;
-// `;
+const StyledMap = styled.div`
+  height: 400px;
+  width: 400px;
+
+  margin: 0px auto;
+
+  .MapContainer {
+    height: 100%;
+    width: 100%;
+  }
+`;

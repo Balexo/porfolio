@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import RegularButton from "./RegularButton";
+import RegularButton from "./shared/RegularButton";
 import { FaLinkedin, FaGithub, FaBars } from "react-icons/fa";
 import { useState } from "react";
 
