@@ -21,7 +21,7 @@ const OtherSkills: React.FC<LearningSkillsProps> = ({
   const numColumns = windowWith > 768 ? columns : columnsMax768px;
 
   return (
-    <SkillsStyled className="SkillsStyled" columns={numColumns}>
+    <SkillsStyled className="SkillsStyled" $columns={numColumns}>
       {learningSkills.map((item, key) => (
         <IndividualSkillStyled key={key} className="StyledIcon">
           <StyledIcon>
@@ -36,16 +36,19 @@ const OtherSkills: React.FC<LearningSkillsProps> = ({
 
 export default OtherSkills;
 
-const SkillsStyled = styled.li<{ columns: number }>`
+const SkillsStyled = styled.ul<{ $columns: number }>`
   width: 80%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(${(props) => props.columns}, 1fr);
+  grid-template-columns: repeat(${($columns) => $columns}, 1fr);
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(${(props) => props.columnsMax768px}, 1fr);
+    grid-template-columns: repeat(
+      ${($columnsMax768px) => $columnsMax768px},
+      1fr
+    );
   }
 `;
 

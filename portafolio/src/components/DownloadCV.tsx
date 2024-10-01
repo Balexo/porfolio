@@ -32,7 +32,7 @@ const DownloadCV = () => {
 
   return (
     <StyledDownloadCV className="StyledDownloadCV">
-      <RegularButton onClick={handleDownload}>Descargar CV</RegularButton>;
+      <RegularButton onClick={handleDownload}>Descargar CV</RegularButton>
     </StyledDownloadCV>
   );
 };

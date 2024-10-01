@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
         <BurgerMenu onClick={toggleMenu} className="BurgerMenu">
           <FaBars size={40} />
         </BurgerMenu>
-        <NavSection showMenu={showMenu} className="NavSection">
+        <NavSection $showMenu={showMenu} className="NavSection">
           {menuItems.map((item) => (
             <RegularButton
               className="RegularButton"
@@ -136,11 +136,11 @@ const BurgerMenu = styled.div`
   }
 `;
 
-const NavSection = styled.div<{ showMenu: boolean }>`
+const NavSection = styled.div<{ $showMenu: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: ${({ showMenu }) => (showMenu ? "center" : "flex-start")};
+  justify-content: ${({ $showMenu }) => ($showMenu ? "center" : "flex-start")};
   transition: height 0.5s ease-in-out;
   overflow: hidden;
 
@@ -150,8 +150,8 @@ const NavSection = styled.div<{ showMenu: boolean }>`
     position: absolute;
     top: 50px;
     left: 0px;
-    overflow: ${({ showMenu }) => (showMenu ? "visible" : "hidden")};
-    max-height: ${({ showMenu }) => (showMenu ? "350px" : "0px")};
+    overflow: ${({ $showMenu }) => ($showMenu ? "visible" : "hidden")};
+    max-height: ${({ $showMenu }) => ($showMenu ? "350px" : "0px")};
     flex-direction: column;
     justify-content: center;
     align-items: center;

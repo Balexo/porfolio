@@ -34,7 +34,7 @@ const Skills: React.FC<SkillsProps> = ({ skillsItems }) => {
 
 export default Skills;
 
-const SkillsStyled = styled.li`
+const SkillsStyled = styled.ul`
   width: 80%;
   margin: 0 auto;
   padding: 0;
