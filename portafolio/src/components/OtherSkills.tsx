@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import useWindowWith from "../hooks/useWindowWith";
 
 interface learningSkills {
   icon: React.ElementType;
@@ -17,11 +16,12 @@ const OtherSkills: React.FC<LearningSkillsProps> = ({
   columns,
   columnsMax768px,
 }) => {
-  const windowWith = useWindowWith();
-  const numColumns = windowWith > 768 ? columns : columnsMax768px;
-
   return (
-    <SkillsStyled className="SkillsStyled" $columns={numColumns}>
+    <SkillsStyled
+      className="SkillsStyled"
+      $columns={columns}
+      $columnsMax768px={columnsMax768px}
+    >
       {learningSkills.map((item, key) => (
         <IndividualSkillStyled key={key} className="StyledIcon">
           <StyledIcon>
@@ -36,7 +36,7 @@ const OtherSkills: React.FC<LearningSkillsProps> = ({
 
 export default OtherSkills;
 
-const SkillsStyled = styled.ul<{ $columns: number }>`
+const SkillsStyled = styled.ul<{ $columns: number; $columnsMax768px: number }>`
   width: 80%;
   margin: 0 auto;
   padding: 0;
