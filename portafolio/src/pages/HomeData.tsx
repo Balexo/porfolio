@@ -10,6 +10,7 @@ import { SiMysql } from "react-icons/si";
 import { SiJest } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 
 import { FaPeopleCarryBox } from "react-icons/fa6";
 import { FaRocket } from "react-icons/fa";
@@ -35,6 +36,7 @@ export const skillsItems = [
   { label: "Node.js", icon: FaNode, porcentage: "40%" },
   { label: "Express", icon: SiExpress, porcentage: "40%" },
   { label: "MongoDB", icon: SiMongodb, porcentage: "30%" },
+  { label: "TypeScript", icon: SiTypescript, porcentage: "30%" },
   { label: "MySQL", icon: SiMysql, porcentage: "30%" },
   { label: "GitHub", icon: FaGithub, porcentage: "60%" },
   { label: "Redux", icon: SiRedux, porcentage: "40%" },
@@ -70,15 +72,15 @@ export const proyectsItems = [
     },
     link: "https://icraftyou.es/",
     icon: [
-      { icon: SiJavascript },
-      { icon: FaReact },
-      { icon: SiRedux },
-      { icon: FaHtml5 },
-      { icon: FaCss3Alt },
-      { icon: FaNode },
-      { icon: SiExpress },
-      { icon: SiMongodb },
-      { icon: FaAws },
+      { label: "JavaScript", icon: SiJavascript },
+      { label: "React", icon: FaReact },
+      { label: "Redux", icon: SiRedux },
+      { label: "HTML5", icon: FaHtml5 },
+      { label: "CSS", icon: FaCss3Alt },
+      { label: "Node.js", icon: FaNode },
+      { label: "Express", icon: SiExpress },
+      { label: "MongoDB", icon: SiMongodb },
+      { label: "AWS", icon: FaAws },
     ],
     summary:
       "Plataforma de comercio electrónico que conecta a artesanos con compradores. La aplicación cuenta con una interfaz intuitiva que permite a los usuarios buscar y comprar productos de manera fácil y segura. En el backend, se ha implementado una API que gestiona la base de datos de productos, usuarios y pedidos, además de un sistema de autenticación seguro. La plataforma incluye funcionalidades como chat en vivo, paginación, múltiples idiomas y un sistema de envío de correos electrónicos automatizados.",
@@ -93,10 +95,11 @@ export const proyectsItems = [
     },
     link: "https://icraftyou.es/",
     icon: [
-      { icon: FaReact },
-      { icon: FaHtml5 },
-      { icon: FaCss3Alt },
-      { icon: FaAws },
+      { label: "React", icon: FaReact },
+      { label: "TypeScript", icon: SiTypescript },
+      { label: "HTML5", icon: FaHtml5 },
+      { label: "CSS", icon: FaCss3Alt },
+      { label: "AWS", icon: FaAws },
     ],
     summary:
       "Página web hecha en React donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px. ",

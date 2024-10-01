@@ -12,6 +12,7 @@ interface Image {
 }
 
 interface Icon {
+  label: string;
   icon: IconType;
 }
 
@@ -64,6 +65,7 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
                 key={index}
                 className="item-icon"
                 href={item.link}
+                title={iconItem.label}
               ></iconItem.icon>
             ))}
           </StyledIcons>
