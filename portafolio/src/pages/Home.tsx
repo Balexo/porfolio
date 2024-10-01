@@ -11,9 +11,9 @@ import {
   proyectsItems,
   learningSkills,
   softSkills,
-} from "./HomeData";
+} from "../data/HomeData";
 import styled from "styled-components";
-import DownloadCV from "../components/downloadCV";
+import DownloadCV from "../components/DownloadCV";
 
 const Home = () => {
   return (

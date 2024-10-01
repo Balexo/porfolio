@@ -20,15 +20,27 @@ import { FaLightbulb } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
 import { FaTree } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
+import { IconType } from "react-icons";
 
-export const menuItems = [
+interface menuItems {
+  label: string;
+  sectionId: string;
+}
+
+export const menuItems: menuItems[] = [
   { label: "Sobre mi", sectionId: "about-me" },
   { label: "Skills", sectionId: "skills" },
   { label: "Proyectos", sectionId: "projects" },
   { label: "Contacto", sectionId: "contact" },
 ];
 
-export const skillsItems = [
+interface skillsItems {
+  label: string;
+  icon: IconType;
+  porcentage: string;
+}
+
+export const skillsItems: skillsItems[] = [
   { label: "JavaScript", icon: SiJavascript, porcentage: "60%" },
   { label: "HTML5", icon: FaHtml5, porcentage: "70%" },
   { label: "CSS", icon: FaCss3Alt, porcentage: "70%" },
@@ -44,13 +56,23 @@ export const skillsItems = [
   { label: "AWS", icon: FaAws, porcentage: "20%" },
 ];
 
-export const learningSkills = [
+interface learningSkills {
+  icon: IconType;
+  text: string;
+}
+
+export const learningSkills: learningSkills[] = [
   { icon: SiJavascript, text: "Profundizando en ES6+" },
   { icon: FaNode, text: "Mejorando en la creación de APIs" },
   { icon: SiMongodb, text: "Optimizando consultas y agregaciones" },
 ];
 
-export const softSkills = [
+interface softSkills {
+  icon: IconType;
+  text: string;
+}
+
+export const softSkills: softSkills[] = [
   { icon: FaPeopleCarryBox, text: "Trabajo en equipo" },
   { icon: FaRocket, text: "Motivación" },
   { icon: FaScaleBalanced, text: "Responsabilidad" },
@@ -61,7 +83,27 @@ export const softSkills = [
   { icon: FaCalendarAlt, text: "Organización" },
 ];
 
-export const proyectsItems = [
+interface imageObject {
+  src: string;
+  alt: string;
+  href: string;
+}
+
+interface iconArray {
+  label: string;
+  icon: IconType;
+}
+
+interface proyectsItems {
+  label: string;
+  linkGitHub: string;
+  image: imageObject;
+  link: string;
+  icon: iconArray[];
+  summary: string;
+}
+
+export const proyectsItems: proyectsItems[] = [
   {
     label: "I Craft You",
     linkGitHub: "https://github.com/orgs/byte-bandis/repositories",
@@ -102,6 +144,6 @@ export const proyectsItems = [
       { label: "AWS", icon: FaAws },
     ],
     summary:
-      "Página web hecha en React donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px. ",
+      "Página web hecha en React y TypeScript donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px. ",
   },
 ];

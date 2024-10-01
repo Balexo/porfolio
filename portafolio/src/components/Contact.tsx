@@ -177,7 +177,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-  padding: 0.4rem;
+  padding: 0.3rem;
 `;
 
 const StyledTextarea = styled.textarea`
