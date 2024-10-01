@@ -2,6 +2,7 @@ import styled from "styled-components";
 import RegularButton from "./shared/RegularButton";
 import { FaLinkedin, FaGithub, FaBars } from "react-icons/fa";
 import { useState } from "react";
+import { IoMdArrowUp } from "react-icons/io";
 
 interface MenuItem {
   label: string;
@@ -54,6 +55,15 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             </RegularButton>
           ))}
         </NavSection>
+
+        <UpButton className="upButton">
+          <RegularButton
+            className="up"
+            onClick={() => handleScrollToSection("about-me")}
+          >
+            <IoMdArrowUp />
+          </RegularButton>
+        </UpButton>
 
         <Linkssection className="Linkssection">
           <a
@@ -185,4 +195,11 @@ const StyledLinkedin = styled(FaLinkedin)`
   @media (max-width: 768px) {
     font-size: 40px;
   }
+`;
+
+const UpButton = styled.div`
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 10;
 `;

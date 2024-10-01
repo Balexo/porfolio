@@ -14,6 +14,7 @@ const Landing = () => {
 export default Landing;
 
 const LandingStyles = styled.div`
+  z-index: 95;
   @keyframes impressiveEntrance {
     0% {
       opacity: 0;

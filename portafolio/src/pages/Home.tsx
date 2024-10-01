@@ -13,7 +13,6 @@ import {
   softSkills,
 } from "./HomeData";
 import styled from "styled-components";
-import RegularButton from "../components/shared/RegularButton";
 import DownloadCV from "../components/downloadCV";
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
       <Header menuItems={menuItems} />
       <StyledBody className="StyledBody">
         <DownloadCV />
-        <RegularButton className="up">Subir</RegularButton>
+
         <Landing></Landing>
         <section id="about-me">
           <StyledH1 className="title without-margin">Sobre mi</StyledH1>
