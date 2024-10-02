@@ -32,7 +32,13 @@ const DownloadCV = () => {
 
   return (
     <StyledDownloadCV className="StyledDownloadCV">
-      <RegularButton onClick={handleDownload}>Descargar CV</RegularButton>
+      <RegularButton
+        onClick={handleDownload}
+        $customBackgroundColor="var(--mustardYellow)"
+        $customColor="var(--navyBlue)"
+      >
+        Descargar CV
+      </RegularButton>
     </StyledDownloadCV>
   );
 };

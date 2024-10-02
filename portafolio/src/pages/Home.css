@@ -2,19 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&display=swap");
 
 :root {
-  --background: #e8e4e2ff;
-  --header: #939492ff;
-  --icons: #475b63ff;
-  --text: #394042ff;
+  --lightBeige: #e8e4e2ff;
+  --gray: #939492ff;
+  --slateBlue: #475b63ff;
+  --charcoal: #394042ff;
   --silver: #c2c2c0ff;
-  --logo: #384d58ff;
-  --alternative: #5b717cff;
-  --heading: #132c3eff;
+  --steelBlue: #384d58ff;
+  --dustyBlue: #5b717cff;
+  --navyBlue: #132c3eff;
+  --mustardYellow: #f5a932;
 }
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: var(--background);
+  background-color: var(--lightBeige);
   font-size: 1.5rem;
 }
 

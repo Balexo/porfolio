@@ -39,6 +39,12 @@ const SkillsStyled = styled.ul`
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 100px;
+
+   @media (max-width: 768px) {
+   grid-template-columns: 1fr
 `;
 
 const IndividualSkillStyled = styled.li`
@@ -53,14 +59,14 @@ const StyledIcon = styled.div`
   font-size: 2.5rem;
   align-self: center;
   margin-bottom: 0.5rem;
-  color: var(--icons);
+  color: var(--navyBlue);
 
   .skill-porcentage {
     margin-left: 1rem;
     font-size: 25px;
     display: flex;
     align-items: center;
-    color: var(--icons);
+    color: var(--slateBlue);
   }
 
   @media (max-width: 768px) {
@@ -83,6 +89,6 @@ const ProgressBar = styled.div`
 
 const Progress = styled.div`
   height: 100%;
-  background-color: var(--heading);
+  background-color: var(--navyBlue);
   transition: width 0.3s ease-in-out;
 `;

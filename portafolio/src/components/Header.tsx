@@ -2,7 +2,7 @@ import styled from "styled-components";
 import RegularButton from "./shared/RegularButton";
 import { FaLinkedin, FaGithub, FaBars } from "react-icons/fa";
 import { useState } from "react";
-import { IoMdArrowUp } from "react-icons/io";
+import { IoMdArrowRoundUp } from "react-icons/io";
 
 interface MenuItem {
   label: string;
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
               className="RegularButton"
               key={item.label}
               $customwidth="220px"
-              $customBackgroundColor="var(--background)"
+              $customBackgroundColor="var(--navyBlue)"
               $customfontsize="1.8rem"
               onClick={() => {
                 handleScrollToSection(item.sectionId);
@@ -63,8 +63,9 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
           <RegularButton
             className="up"
             onClick={() => handleScrollToSection("about-me")}
+            $customPadding="0.5rem"
           >
-            <IoMdArrowUp />
+            <IoMdArrowRoundUp height="2em" width="2em" />
           </RegularButton>
         </UpButton>
 
@@ -93,9 +94,9 @@ export default Header;
 
 const HeaderStyle = styled.nav`
   height: 100vh;
-  background-color: var(--header);
+  background-color: var(--gray);
   position: fixed;
-  width: 19rem;
+  width: 29rem;
   z-index: 2;
   top: 0;
   left: 0;
@@ -120,14 +121,14 @@ const HeaderStyle = styled.nav`
 
 const Logo = styled.div`
   font-family: "Bungee Outline", sans-serif;
-  color: var(--logo);
+  color: var(--navyBlue);
   font-weight: bold;
   text-align: center;
-  font-size: 5rem;
+  font-size: 7rem;
   margin-top: 1rem;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 2.7rem;
     margin-top: 0;
   }
 `;
@@ -152,7 +153,7 @@ const NavSection = styled.div<{ $showMenu: boolean }>`
 
   @media (max-width: 768px) {
     width: 100%;
-    background-color: yellow;
+    background-color: #c2c2c0ff;
     position: absolute;
     top: 50px;
     left: 0px;
@@ -188,7 +189,7 @@ const Linkssection = styled.div`
 
 const StyledGithub = styled(FaGithub)`
   font-size: 65px;
-  color: var(--icons);
+  color: var(--mustardYellow);
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -197,7 +198,7 @@ const StyledGithub = styled(FaGithub)`
 
 const StyledLinkedin = styled(FaLinkedin)`
   font-size: 65px;
-  color: var(--icons);
+  color: var(--mustardYellow);
 
   @media (max-width: 768px) {
     font-size: 40px;

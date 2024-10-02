@@ -42,13 +42,10 @@ const SkillsStyled = styled.ul<{ $columns: number; $columnsMax768px: number }>`
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(${($columns) => $columns}, 1fr);
+  grid-template-columns: repeat(${(props) => props.$columns}, 1fr);
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(
-      ${($columnsMax768px) => $columnsMax768px},
-      1fr
-    );
+    grid-template-columns: repeat(${(props) => props.$columnsMax768px}, 1fr);
   }
 `;
 
@@ -62,7 +59,7 @@ const StyledIcon = styled.span`
   display: flex;
   font-size: 2.5rem;
   align-self: center;
-  color: var(--icons);
+  color: var(--navyBlue);
 `;
 
 const SkillsText = styled.span`

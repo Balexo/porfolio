@@ -171,24 +171,27 @@ const StyledForm = styled.form`
   width: 80%;
   margin-left: 1rem;
   gap: 0.5rem 0rem;
+
+    @media (max-width: 768px) {
+    gap: 0rem;
 `;
 
 const StyledLabel = styled.label`
-  padding: 0rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 `;
 
 const StyledInput = styled.input`
-  padding: 0.3rem;
+  padding: 1.2rem;
 `;
 
 const StyledTextarea = styled.textarea`
-  height: 10rem;
+  height: 14rem;
   width: 100%;
 `;
 
 const StyledMap = styled.div`
   height: 750px;
-  width: 750px;
+  width: 950px;
 
   margin: 0px auto;
 
@@ -199,6 +202,7 @@ const StyledMap = styled.div`
 
   @media (max-width: 768px) {
     height: 550px;
-    width: 550px;
+    width: 350px;
+    margin-bottom: 5rem;
   }
 `;

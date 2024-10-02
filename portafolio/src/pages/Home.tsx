@@ -22,14 +22,14 @@ const Home = () => {
       <Header menuItems={menuItems} />
       <StyledBody className="StyledBody">
         <CodeBackground className="code">
-          <p>Code</p>
+          <p>CODE</p>
         </CodeBackground>
         <DownloadCV />
 
         <Landing />
 
         <section id="about-me">
-          <StyledH1 className="title without-margin">Sobre mi</StyledH1>
+          <StyledH1 className="title without-margin">Sobre mí</StyledH1>
           <AboutMe />
         </section>
 
@@ -46,7 +46,7 @@ const Home = () => {
           <OtherSkills
             learningSkills={softSkills}
             columns={4}
-            columnsMax768px={2}
+            columnsMax768px={1}
           />
         </section>
 
@@ -67,7 +67,7 @@ const Home = () => {
 export default Home;
 
 const StyledBody = styled.div`
-  margin: 0rem 0rem 0rem 24rem;
+  margin: 0rem 0rem 0rem 34rem;
   display: block;
   flex-direction: column;
 
@@ -79,8 +79,8 @@ const StyledBody = styled.div`
 const StyledH1 = styled.h1`
   margin-top: 5rem;
   text-align: center;
-  font-size: 2rem;
-  color: var(--heading);
+  font-size: 4rem;
+  color: var(--navyBlue);
 
   &.without-margin {
     margin-top: 0rem;
@@ -90,14 +90,14 @@ const StyledH1 = styled.h1`
 const CodeBackground = styled.div`
   position: absolute;
   left: 40%;
-  top: -470px;
+  top: -400px;
   z-index: -1;
   font-family: "Bungee Outline", sans-serif;
   font-weight: bold;
 
   font-size: 400px;
-  color: blue;
-  opacity: 0.1;
+  color: var(--navyBlue);
+  opacity: 0.02;
   letter-spacing: 10px;
   text-transform: uppercase;
 
@@ -109,7 +109,7 @@ const CodeBackground = styled.div`
 
   @media (max-width: 768px) {
     font-size: 120px;
-    left: 0;
+    left: 10px;
     top: 80px;
   }
 `;

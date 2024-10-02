@@ -43,7 +43,7 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
             rel="noopener noreferrer"
             className="project-link-github"
           >
-            <FaGithub size={24} />
+            <FaGithub size={54} />
           </StyledGitHubLink>
           <StyledWebLink
             href={item.link}
@@ -80,22 +80,30 @@ export default Proyects;
 
 const StyledProyectList = styled.div`
   width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledProyectItem = styled.ul``;
 
 const StyledTitleProyect = styled.h3`
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-style: italic;
+  color: var(--navyBlue);
 `;
 
 const StyledGitHubLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 125px;
-  color: var(--icons);
+
+  color: var(--mustardYellow);
 `;
 
 const StyledWebLink = styled.a`
@@ -122,11 +130,12 @@ const StyledIcons = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
-  color: var(--icons);
+  color: var(--navyBlue);
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 2rem;
-    gap:10px;
+    gap: 10px;
+  }
 `;
 
 const StyledComments = styled.p`
