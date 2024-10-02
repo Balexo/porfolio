@@ -1,12 +1,28 @@
 import styled from "styled-components";
+import { useRef, useEffect } from "react";
 
 const Landing = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const text =
+      "  Hola, soy Óscar, desarrollador web full-stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
+    let index = 0;
+
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        textRef.current.innerHTML += text[index];
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 40);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <LandingStyles className="LandingStyles">
-      <p>
-        Hola, soy Óscar. Soy desarrollador web full-stack con experiencia en
-        React, Node.js y MongoDB. Te invito a visitar mi portafolio.
-      </p>
+      <p ref={textRef}> </p>
     </LandingStyles>
   );
 };
@@ -14,20 +30,11 @@ const Landing = () => {
 export default Landing;
 
 const LandingStyles = styled.div`
-  @keyframes impressiveEntrance {
-    0% {
-      opacity: 0;
-      transform: translateY(-50px) scale(0.8);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(0) scale(1.1);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
+  font-weight: 500;
+  font-size: 90px;
+  z-index: 1;
 
-  animation: impressiveEntrance 2s ease-in-out;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
 `;

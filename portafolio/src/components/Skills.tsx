@@ -53,12 +53,14 @@ const StyledIcon = styled.div`
   font-size: 2.5rem;
   align-self: center;
   margin-bottom: 0.5rem;
+  color: var(--icons);
 
   .skill-porcentage {
     margin-left: 1rem;
     font-size: 25px;
     display: flex;
     align-items: center;
+    color: var(--icons);
   }
 
   @media (max-width: 768px) {
@@ -81,6 +83,6 @@ const ProgressBar = styled.div`
 
 const Progress = styled.div`
   height: 100%;
-  background-color: #4caf50;
+  background-color: var(--heading);
   transition: width 0.3s ease-in-out;
 `;

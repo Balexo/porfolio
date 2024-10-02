@@ -134,13 +134,14 @@ export const Contact: React.FC = () => {
             type="submit"
             disabled={state.submitting}
             className="submit-button"
+            $customfontsize="1.4rem"
           >
             {state.submitting ? "Enviando" : "Enviar"}
           </RegularButton>
         </StyledForm>
 
         <StyledMap className="StyledMap">
-          <MapContainer className="MapContainer" center={position} zoom={10}>
+          <MapContainer className="MapContainer" center={position} zoom={14}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -186,13 +187,18 @@ const StyledTextarea = styled.textarea`
 `;
 
 const StyledMap = styled.div`
-  height: 400px;
-  width: 400px;
+  height: 750px;
+  width: 750px;
 
   margin: 0px auto;
 
   .MapContainer {
     height: 100%;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    height: 550px;
+    width: 550px;
   }
 `;

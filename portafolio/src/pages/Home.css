@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&display=swap");
+
+:root {
+  --background: #e8e4e2ff;
+  --header: #939492ff;
+  --icons: #475b63ff;
+  --text: #394042ff;
+  --silver: #c2c2c0ff;
+  --logo: #384d58ff;
+  --alternative: #5b717cff;
+  --heading: #132c3eff;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: var(--background);
+  font-size: 1.5rem;
+}
+
+.LandingStyles {
+  font-family: "Raleway Dots", cursive;
+}
+
+/* --primary-100:#FFFFFF;
+--primary-200:#e0e0e0;
+--primary-300:#9b9b9b;
+--accent-100:#FF7F00;
+--accent-200:#d2d2d2;
+--text-100:#FFFFFF;
+--text-200:#e0e0e0;
+--bg-100:#3B5998;
+--bg-200:#4f6aab;
+--bg-300:#6d85c9;
+
+//OPCIÓN 2
+--primary-100:#86efac;
+--primary-200:#f0fdf5;
+--primary-300:#19725D;
+--accent-100:#f5be0b;
+--accent-200:#fef1c7;
+--text-100:#292524;
+--text-200:#78716c;
+--bg-100:#fafaf9;
+--bg-200:#f5f5f4;
+--bg-300:#E0E2E5; */

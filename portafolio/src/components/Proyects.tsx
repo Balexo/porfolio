@@ -87,12 +87,15 @@ const StyledProyectItem = styled.ul``;
 const StyledTitleProyect = styled.h3`
   text-align: center;
   font-size: 1.4rem;
+  font-style: italic;
 `;
 
 const StyledGitHubLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 125px;
+  color: var(--icons);
 `;
 
 const StyledWebLink = styled.a`
@@ -119,6 +122,7 @@ const StyledIcons = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
+  color: var(--icons);
 
     @media (max-width: 768px) {
     font-size: 2rem;

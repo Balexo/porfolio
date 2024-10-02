@@ -62,6 +62,7 @@ const StyledIcon = styled.span`
   display: flex;
   font-size: 2.5rem;
   align-self: center;
+  color: var(--icons);
 `;
 
 const SkillsText = styled.span`

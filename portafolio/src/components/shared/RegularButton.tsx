@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 const RegularButton = styled.button`
+  color: ${(props) => props.$customColor || "var(--silver)"};
+  background-color: ${(props) =>
+    props.$customBackgroundColor || "var(--heading)"};
   cursor: ${(props) => props.$customCursor || "pointer"};
   border-radius: ${(props) => props.$customBorderRadius || "5px"};
   margin: ${(props) => props.$customMargin || "0"};
   padding: ${(props) => props.$customPadding || "1.3rem"};
   text-align: center;
   display: inline-block;
-  font-size: ${(props) => props.$customfontsize || "16px"};
+  font-size: ${(props) => props.$customfontsize || "2rem"};
   height: fit-content;
   width: ${(props) => props.$customwidth || "fit-content"};
   font-weight: ${(props) => props.$customFontWeight || "500"};

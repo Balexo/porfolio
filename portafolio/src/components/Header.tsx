@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   return (
     <>
       <HeaderStyle className="HeaderStyle">
-        <Logo>/*</Logo>
+        <Logo>CODE</Logo>
 
         <BurgerMenu onClick={toggleMenu} className="BurgerMenu">
           <FaBars size={40} />
@@ -46,6 +46,9 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             <RegularButton
               className="RegularButton"
               key={item.label}
+              $customwidth="220px"
+              $customBackgroundColor="var(--background)"
+              $customfontsize="1.8rem"
               onClick={() => {
                 handleScrollToSection(item.sectionId);
                 setShowMenu(false);
@@ -90,9 +93,9 @@ export default Header;
 
 const HeaderStyle = styled.nav`
   height: 100vh;
-  background-color: green;
+  background-color: var(--header);
   position: fixed;
-  width: 13rem;
+  width: 19rem;
   z-index: 2;
   top: 0;
   left: 0;
@@ -116,6 +119,9 @@ const HeaderStyle = styled.nav`
 `;
 
 const Logo = styled.div`
+  font-family: "Bungee Outline", sans-serif;
+  color: var(--logo);
+  font-weight: bold;
   text-align: center;
   font-size: 5rem;
   margin-top: 1rem;
@@ -159,12 +165,11 @@ const NavSection = styled.div<{ $showMenu: boolean }>`
   }
 
   button {
-    margin: 10px 0;
+    margin: 20px 0;
   }
 `;
 
 const Linkssection = styled.div`
-  background-color: blue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,6 +188,7 @@ const Linkssection = styled.div`
 
 const StyledGithub = styled(FaGithub)`
   font-size: 65px;
+  color: var(--icons);
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -191,6 +197,7 @@ const StyledGithub = styled(FaGithub)`
 
 const StyledLinkedin = styled(FaLinkedin)`
   font-size: 65px;
+  color: var(--icons);
 
   @media (max-width: 768px) {
     font-size: 40px;
