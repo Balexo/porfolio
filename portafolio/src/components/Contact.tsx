@@ -191,7 +191,7 @@ const StyledTextarea = styled.textarea`
 
 const StyledMap = styled.div`
   height: 750px;
-  width: 950px;
+  width: 750px;
 
   margin: 0px auto;
 
