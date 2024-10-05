@@ -13,16 +13,19 @@ const DownloadCV = () => {
   };
 
   useEffect(() => {
+    const button = document.querySelector(".StyledDownloadCV");
     const handleScroll = () => {
-      const button = document.querySelector(".StyledDownloadCV");
       const scrollPosition = window.scrollY;
 
-      if (scrollPosition < 50) {
-        button?.classList.add("lower");
-      } else {
+      if (scrollPosition > 50) {
         button?.classList.remove("lower");
+      } else {
+        button?.classList.add("lower");
       }
     };
+
+    button?.classList.add("lower");
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -50,15 +53,13 @@ const StyledDownloadCV = styled.div`
   top: 10px;
   right: 15px;
   z-index: 10;
+  transition: top 0.6s ease-in-out;
 
-  .lower {
+  &.lower {
+    top: 400px;
   }
 
   @media (max-width: 768px) {
     top: 55px;
-
-    &.lower {
-      top: 440px;
-    }
   }
 `;

@@ -67,12 +67,12 @@ const Home = () => {
 export default Home;
 
 const StyledBody = styled.div`
-  margin: 0rem 0rem 0rem 22rem;
+  margin: -4rem 0rem 0rem 22rem;
   display: block;
   flex-direction: column;
 
   @media (max-width: 768px) {
-    margin: 70px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
   }
 `;
 
@@ -90,7 +90,7 @@ const StyledH1 = styled.h1`
 const CodeBackground = styled.div`
   position: absolute;
   left: 30%;
-  top: -150px;
+  top: -260px;
   z-index: -1;
   font-family: "Bungee Outline", sans-serif;
   font-weight: bold;

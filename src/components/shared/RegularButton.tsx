@@ -1,6 +1,23 @@
 import styled from "styled-components";
 
-const RegularButton = styled.button`
+interface RegularButtonProps {
+  $customColor?: string;
+  $customBackgroundColor?: string;
+  $customCursor?: string;
+  $customBorderRadius?: string;
+  $customMargin?: string;
+  $customPadding?: string;
+  $customfontsize?: string;
+  $customWidth?: string;
+  $customFontWeight?: string;
+  $customPosition?: string;
+  $customTop?: string;
+  $customRight?: string;
+  $customZIndex?: string;
+  $customTransition?: string;
+}
+
+const RegularButton = styled.button<RegularButtonProps>`
   color: ${(props) => props.$customColor || "var(--lightBeige)"};
   background-color: ${(props) =>
     props.$customBackgroundColor || "var(--navyBlue)"};
@@ -12,7 +29,7 @@ const RegularButton = styled.button`
   display: inline-block;
   font-size: ${(props) => props.$customfontsize || "1.2rem"};
   height: fit-content;
-  width: ${(props) => props.$customwidth || "fit-content"};
+  width: ${(props) => props.$customWidth || "fit-content"};
   font-weight: ${(props) => props.$customFontWeight || "500"};
   position: ${(props) => props.$customPosition || "relative"};
   top: ${(props) => props.$customTop || "0"};
@@ -25,7 +42,7 @@ const RegularButton = styled.button`
   @media (max-width: 768px) {
     font-size: 1rem;
     padding: 1rem;
-    width: 100px;
+    width: ${(props) => props.$specialWidth || props.$customWidth || "130px"};
   }
 `;
 

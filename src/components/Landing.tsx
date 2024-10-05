@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useRef, useEffect } from "react";
 
 const Landing = () => {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
     const text =
@@ -10,7 +10,7 @@ const Landing = () => {
     let index = 0;
 
     const interval = setInterval(() => {
-      if (index < text.length) {
+      if (index < text.length && textRef.current) {
         textRef.current.innerHTML += text[index];
         index++;
       } else {

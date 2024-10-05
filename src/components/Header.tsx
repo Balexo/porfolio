@@ -21,9 +21,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
     if (sectionElement) {
       const yOffset = -60;
       const y =
-        sectionElement.getBoundingClientRect().top +
-        window.pageYOffset +
-        yOffset;
+        sectionElement.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({ top: y, behavior: "smooth" });
       setShowMenu(false);
@@ -46,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             <RegularButton
               className="RegularButton"
               key={item.label}
-              $customwidth="220px"
+              $customWidth="220px"
               $customBackgroundColor="var(--navyBlue)"
               onClick={() => {
                 handleScrollToSection(item.sectionId);
@@ -63,6 +61,8 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             className="up"
             onClick={() => handleScrollToSection("about-me")}
             $customPadding="0.5rem"
+            $customWidth="100px"
+            $specialWidth="60px"
           >
             <IoMdArrowRoundUp height="2em" width="2em" />
           </RegularButton>

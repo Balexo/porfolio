@@ -127,7 +127,7 @@ export const proyectsItems: proyectsItems[] = [
       { label: "AWS", icon: FaAws },
     ],
     description:
-      "Plataforma de comercio electrónico que conecta a artesanos con compradores. La aplicación cuenta con una interfaz intuitiva que permite a los usuarios buscar y comprar productos de manera fácil y segura. En el backend, se ha implementado una API que gestiona la base de datos de productos, usuarios y pedidos, además de un sistema de autenticación seguro. La plataforma incluye funcionalidades como chat en vivo, paginación, múltiples idiomas y un sistema de envío de correos electrónicos automatizados.",
+      "Plataforma de comercio electrónico que conecta a artesanos con compradores. \n La aplicación cuenta con una interfaz intuitiva que permite a los usuarios buscar y comprar productos de manera fácil y segura. En el backend, se ha implementado una API que gestiona la base de datos de productos, usuarios y pedidos, además de un sistema de autenticación seguro. La plataforma incluye funcionalidades como chat en vivo, paginación, múltiples idiomas y un sistema de envío de correos electrónicos automatizados.",
   },
   {
     label: "Porfolio",
@@ -146,6 +146,6 @@ export const proyectsItems: proyectsItems[] = [
       { label: "AWS", icon: FaAws },
     ],
     description:
-      "Página web hecha en React y TypeScript donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px.",
+      "Página web hecha en React y TypeScript donde subir mis proyectos.          \nFuncionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px.",
   },
 ];

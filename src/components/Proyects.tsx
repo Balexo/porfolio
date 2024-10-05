@@ -10,12 +10,22 @@ interface MenuProps {
 }
 
 const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
-  const MAX_LENGTH = 82;
+  const MAX_LENGTH = 75;
+
+  const [expandedState, setIsExpandedState] = useState<boolean[]>(
+    Array(proyectsItems.length).fill(false),
+  );
+
+  const handelToggleExpand = (index: number) => {
+    const newExpandedState = [...expandedState];
+    newExpandedState[index] = !newExpandedState[index];
+    setIsExpandedState(newExpandedState);
+  };
 
   return (
     <StyledProyectList className="proyects-list">
-      {proyectsItems.map((item) => {
-        const [isExpanded, setIsExpanded] = useState(false);
+      {proyectsItems.map((item, index) => {
+        const isExpanded = expandedState[index];
         const shortDescription = item.description.substring(0, MAX_LENGTH);
 
         return (
@@ -58,7 +68,7 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
             <StyledDescription className="description">
               {isExpanded ? item.description : shortDescription}
             </StyledDescription>
-            <RegularButton onClick={() => setIsExpanded(!isExpanded)}>
+            <RegularButton onClick={() => handelToggleExpand(index)}>
               {isExpanded ? "Leer menos" : "Leer más"}
             </RegularButton>
           </StyledProyectItem>
@@ -86,7 +96,6 @@ const StyledProyectItem = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   margin: 0;
   padding: 1rem 0rem;
 `;
@@ -123,7 +132,7 @@ const StyledImage = styled.img`
   }
 
   @media (max-width: 768px) {
-    height: 220px;
+    height: 200px;
   }
 `;
 
@@ -147,4 +156,5 @@ const StyledDescription = styled.p`
   margin: 1rem 1rem;
   padding: 1rem;
   border-radius: 15px;
+  white-space: pre-line;
 `;
