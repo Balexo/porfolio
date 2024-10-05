@@ -1,77 +1,69 @@
 import React from "react";
-import { IconType } from "react-icons";
 import { FaGithub } from "react-icons/fa";
 import styled from "styled-components";
-
-interface Image {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  href: string;
-}
-
-interface Icon {
-  label: string;
-  icon: IconType;
-}
-
-interface proyectsItems {
-  label: string;
-  image: Image;
-  icon: Icon[];
-  link: string;
-  linkGitHub: string;
-  summary: string;
-}
+import type { proyectsItems } from "../data/HomeData";
+import { useState } from "react";
+import RegularButton from "./shared/RegularButton";
 
 interface MenuProps {
   proyectsItems: proyectsItems[];
 }
 
 const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
+  const MAX_LENGTH = 82;
+
   return (
     <StyledProyectList className="proyects-list">
-      {proyectsItems.map((item) => (
-        <StyledProyectItem key={item.label} className="proyect-item">
-          <StyledTitleProyect className="title-proyect">
-            {item.label}
-          </StyledTitleProyect>
-          <StyledGitHubLink
-            href={item.linkGitHub}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link-github"
-          >
-            <FaGithub size={54} />
-          </StyledGitHubLink>
-          <StyledWebLink
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link-web"
-          >
-            <StyledImage
-              src={item.image.src}
-              alt={item.image.alt}
-              width={item.image.width}
-              height={item.image.height}
-              className="proyect-image"
-            />
-          </StyledWebLink>
-          <StyledIcons className="proyect-icons">
-            {item.icon.map((iconItem, index) => (
-              <iconItem.icon
-                key={index}
-                className="item-icon"
-                href={item.link}
-                title={iconItem.label}
-              ></iconItem.icon>
-            ))}
-          </StyledIcons>
-          <StyledComments>{item.summary}</StyledComments>
-        </StyledProyectItem>
-      ))}
+      {proyectsItems.map((item) => {
+        const [isExpanded, setIsExpanded] = useState(false);
+        const shortDescription = item.description.substring(0, MAX_LENGTH);
+
+        return (
+          <StyledProyectItem key={item.label} className="proyect-item">
+            <StyledTitleProyect className="title-proyect">
+              {item.label}
+            </StyledTitleProyect>
+            <StyledGitHubLink
+              href={item.linkGitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link-github"
+            >
+              <FaGithub />
+            </StyledGitHubLink>
+            <StyledWebLink
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link-web"
+            >
+              <StyledImage
+                src={item.image.src}
+                alt={item.image.alt}
+                width={item.image.width}
+                height={item.image.height}
+                className="proyect-image"
+              />
+            </StyledWebLink>
+            <StyledIcons className="proyect-icons">
+              {item.icon.map((iconItem, index) => (
+                <iconItem.icon
+                  key={index}
+                  className="item-icon"
+                  href={item.link}
+                  title={iconItem.label}
+                ></iconItem.icon>
+              ))}
+            </StyledIcons>
+            <StyledDescription className="description">
+              {isExpanded ? item.description : shortDescription}
+            </StyledDescription>
+            <RegularButton onClick={() => setIsExpanded(!isExpanded)}>
+              {isExpanded ? "Leer menos" : "Leer más"}
+            </RegularButton>
+          </StyledProyectItem>
+        );
+      })}
     </StyledProyectList>
   );
 };
@@ -79,29 +71,39 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
 export default Proyects;
 
 const StyledProyectList = styled.div`
-  width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px;
+  gap: 15px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const StyledProyectItem = styled.ul``;
+const StyledProyectItem = styled.ul`
+  background-color: var(--darkGrey);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  padding: 1rem 0rem;
+`;
 
 const StyledTitleProyect = styled.h3`
   text-align: center;
   font-size: 1.8rem;
   font-style: italic;
   color: var(--navyBlue);
+  margin: 20px 0px;
 `;
 
 const StyledGitHubLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 50px;
 
   color: var(--mustardYellow);
 `;
@@ -113,23 +115,24 @@ const StyledWebLink = styled.a`
 
 const StyledImage = styled.img`
   margin: 1rem 0rem;
-  height: 280px;
+  height: 250px;
   width: auto;
 
-  :hover {
-    display: block;
-    height: 500px;
+  &:hover {
+    transform: scale(1.2);
   }
 
-    @media (max-width: 768px) {
-    height:220px;
+  @media (max-width: 768px) {
+    height: 220px;
+  }
 `;
 
 const StyledIcons = styled.div`
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  margin-left: -35px;
+  gap: 15px;
   color: var(--navyBlue);
 
   @media (max-width: 768px) {
@@ -138,6 +141,10 @@ const StyledIcons = styled.div`
   }
 `;
 
-const StyledComments = styled.p`
+const StyledDescription = styled.p`
+  background-color: #8a8f91;
   font-size: 1.2rem;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  border-radius: 15px;
 `;

@@ -73,19 +73,21 @@ interface softSkills {
 }
 
 export const softSkills: softSkills[] = [
-  { icon: FaPeopleCarryBox, text: "Trabajo en equipo" },
-  { icon: FaRocket, text: "Motivación" },
-  { icon: FaScaleBalanced, text: "Responsabilidad" },
+  { icon: FaPeopleCarryBox, text: "Colaborativo" },
+  { icon: FaRocket, text: "Motivado" },
   { icon: FaMagnifyingGlass, text: "Analítico" },
-  { icon: FaLightbulb, text: "Curiosidad" },
-  { icon: FaBookOpen, text: "Aprendizaje continuo" },
-  { icon: FaTree, text: "Resiliencia" },
-  { icon: FaCalendarAlt, text: "Organización" },
+  { icon: FaScaleBalanced, text: "Responsable" },
+  { icon: FaLightbulb, text: "Curioso" },
+  { icon: FaBookOpen, text: "Aprendiz continuo" },
+  { icon: FaTree, text: "Resiliente" },
+  { icon: FaCalendarAlt, text: "Organizado" },
 ];
 
 interface imageObject {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
   href: string;
 }
 
@@ -94,13 +96,13 @@ interface iconArray {
   icon: IconType;
 }
 
-interface proyectsItems {
+export interface proyectsItems {
   label: string;
   linkGitHub: string;
   image: imageObject;
   link: string;
   icon: iconArray[];
-  summary: string;
+  description: string;
 }
 
 export const proyectsItems: proyectsItems[] = [
@@ -124,7 +126,7 @@ export const proyectsItems: proyectsItems[] = [
       { label: "MongoDB", icon: SiMongodb },
       { label: "AWS", icon: FaAws },
     ],
-    summary:
+    description:
       "Plataforma de comercio electrónico que conecta a artesanos con compradores. La aplicación cuenta con una interfaz intuitiva que permite a los usuarios buscar y comprar productos de manera fácil y segura. En el backend, se ha implementado una API que gestiona la base de datos de productos, usuarios y pedidos, además de un sistema de autenticación seguro. La plataforma incluye funcionalidades como chat en vivo, paginación, múltiples idiomas y un sistema de envío de correos electrónicos automatizados.",
   },
   {
@@ -143,7 +145,7 @@ export const proyectsItems: proyectsItems[] = [
       { label: "CSS", icon: FaCss3Alt },
       { label: "AWS", icon: FaAws },
     ],
-    summary:
-      "Página web hecha en React y TypeScript donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px. ",
+    description:
+      "Página web hecha en React y TypeScript donde subir mis proyectos. Funcionalidades de recibir correo a través de la zona de contacto y responsive para pantallas de 768px.",
   },
 ];

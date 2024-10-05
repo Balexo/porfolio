@@ -11,12 +11,13 @@
   --dustyBlue: #5b717cff;
   --navyBlue: #132c3eff;
   --mustardYellow: #f5a932;
+  --darkGrey: #3c4245;
 }
 
 body {
   font-family: "Raleway", sans-serif;
   background-color: var(--lightBeige);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .LandingStyles {

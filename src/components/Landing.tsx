@@ -31,7 +31,7 @@ export default Landing;
 
 const LandingStyles = styled.div`
   font-weight: 500;
-  font-size: 90px;
+  font-size: 4.5rem;
   z-index: 1;
 
   @media (max-width: 768px) {

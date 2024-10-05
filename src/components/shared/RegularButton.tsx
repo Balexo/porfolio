@@ -7,10 +7,10 @@ const RegularButton = styled.button`
   cursor: ${(props) => props.$customCursor || "pointer"};
   border-radius: ${(props) => props.$customBorderRadius || "15px"};
   margin: ${(props) => props.$customMargin || "0"};
-  padding: ${(props) => props.$customPadding || "1.5rem"};
+  padding: ${(props) => props.$customPadding || "1rem"};
   text-align: center;
   display: inline-block;
-  font-size: ${(props) => props.$customfontsize || "2rem"};
+  font-size: ${(props) => props.$customfontsize || "1.2rem"};
   height: fit-content;
   width: ${(props) => props.$customwidth || "fit-content"};
   font-weight: ${(props) => props.$customFontWeight || "500"};

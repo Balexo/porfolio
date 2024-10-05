@@ -168,7 +168,6 @@ const StyledContact = styled.div`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 80%;
   margin-left: 1rem;
   gap: 0.5rem 0rem;
 
@@ -190,8 +189,8 @@ const StyledTextarea = styled.textarea`
 `;
 
 const StyledMap = styled.div`
-  height: 750px;
-  width: 750px;
+  height: 450px;
+  width: 450px;
 
   margin: 0px auto;
 

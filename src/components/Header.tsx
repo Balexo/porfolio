@@ -48,7 +48,6 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
               key={item.label}
               $customwidth="220px"
               $customBackgroundColor="var(--navyBlue)"
-              $customfontsize="1.8rem"
               onClick={() => {
                 handleScrollToSection(item.sectionId);
                 setShowMenu(false);
@@ -96,7 +95,7 @@ const HeaderStyle = styled.nav`
   height: 100vh;
   background-color: var(--gray);
   position: fixed;
-  width: 29rem;
+  width: 20rem;
   z-index: 2;
   top: 0;
   left: 0;
@@ -124,7 +123,7 @@ const Logo = styled.div`
   color: var(--navyBlue);
   font-weight: bold;
   text-align: center;
-  font-size: 7rem;
+  font-size: 5rem;
   margin-top: 1rem;
 
   @media (max-width: 768px) {
@@ -175,7 +174,7 @@ const Linkssection = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin: 0px 0px 100px 0px;
+  margin: 0px 0px 50px 0px;
   flex-direction: row;
 
   a {
@@ -188,7 +187,7 @@ const Linkssection = styled.div`
 `;
 
 const StyledGithub = styled(FaGithub)`
-  font-size: 65px;
+  font-size: 50px;
   color: var(--mustardYellow);
 
   @media (max-width: 768px) {
@@ -197,7 +196,7 @@ const StyledGithub = styled(FaGithub)`
 `;
 
 const StyledLinkedin = styled(FaLinkedin)`
-  font-size: 65px;
+  font-size: 50px;
   color: var(--mustardYellow);
 
   @media (max-width: 768px) {
