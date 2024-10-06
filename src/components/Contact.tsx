@@ -1,6 +1,6 @@
 import RegularButton from "./shared/RegularButton";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "@formspree/react";
 import CustomAlert from "./shared/CustomAlert";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -16,6 +16,7 @@ export const Contact: React.FC = () => {
   const [state, handleSubmit] = useForm("mrbznear");
   const [messageValidations, setMessageValidations] = useState<string[]>([]);
   const [successMessage, setSuccessMessage] = useState<string[]>([]);
+  const [showAlert, setShowAlert] = useState<boolean>(false);
 
   function RegexEmail(email: string) {
     const regex =
@@ -31,7 +32,7 @@ export const Contact: React.FC = () => {
       errors.push(errorNameMessage);
     }
 
-    if (!email.trim() && !RegexEmail) {
+    if (!email.trim() && !RegexEmail(email)) {
       const errorEmailMessage: string = "El email no es válido";
       errors.push(errorEmailMessage);
     }
@@ -39,6 +40,10 @@ export const Contact: React.FC = () => {
     if (!message.trim()) {
       const errorTextAreaMessage: string = "Por favor añade el mensaje";
       errors.push(errorTextAreaMessage);
+    } else if (message.length < 50) {
+      const errorLengthTextArea: string =
+        "El mensaje debe tener al menos 50 caracteres";
+      errors.push(errorLengthTextArea);
     }
 
     setMessageValidations(errors);
@@ -51,14 +56,14 @@ export const Contact: React.FC = () => {
 
     const errors = validationsForm();
 
-    if (errors.length === 0) {
+    if (errors.length > 0) {
+      setShowAlert(true);
+    } else {
       await handleSubmit(e);
-
-      console.log(state);
-      console.log(Response);
 
       try {
         if (state.succeeded) {
+          setShowAlert(true);
           setSuccessMessage([
             "Correo enviado correctamente! Gracias por contactar, pronto recibirás respuesta.",
           ]);
@@ -69,77 +74,95 @@ export const Contact: React.FC = () => {
         }
       } catch {
         setMessageValidations(["Parece que hubo un error"]);
+        setShowAlert(true);
       }
     }
+  };
+
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [showAlert]);
+
+  const handleAlert = () => {
+    setShowAlert(false);
   };
 
   return (
     <>
       <StyledContact className="styledcontact">
-        <StyledForm className="styledform" onSubmit={handleFormSubmit}>
-          {messageValidations.length > 0 && (
-            <CustomAlert message={messageValidations} type={"error"} />
-          )}
-          {successMessage && (
-            <CustomAlert message={successMessage} type={"success"} />
-          )}
-          <StyledLabel htmlFor="name" className="styledlabel">
-            Nombre:
-          </StyledLabel>
-          <StyledInput
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setName(e.target.value)
+        {showAlert ? (
+          <CustomAlert
+            type={messageValidations.length > 0 ? "error" : "success"}
+            message={
+              messageValidations.length > 0
+                ? messageValidations
+                : successMessage
             }
-            required
-            placeholder="Tu nombre"
-            className="styledlinput"
+            onClose={handleAlert}
           />
+        ) : (
+          <StyledForm className="styledform" onSubmit={handleFormSubmit}>
+            <StyledLabel htmlFor="name" className="styledlabel">
+              Nombre:
+            </StyledLabel>
+            <StyledInput
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setName(e.target.value)
+              }
+              required
+              placeholder="Tu nombre"
+              className="styledlinput"
+            />
 
-          <StyledLabel htmlFor="email" className="styledlabel">
-            Email:
-          </StyledLabel>
-          <StyledInput
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
-            }
-            required
-            placeholder="Tu email"
-            className="styledlinput"
-          />
+            <StyledLabel htmlFor="email" className="styledlabel">
+              Email:
+            </StyledLabel>
+            <StyledInput
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
+              required
+              placeholder="Tu email"
+              className="styledlinput"
+            />
 
-          <StyledLabel htmlFor="message" className="styledlabel">
-            Introduce el mensaje:
-          </StyledLabel>
-          <StyledTextarea
-            id="message"
-            name="message"
-            value={message}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setMessage(e.target.value)
-            }
-            required
-            placeholder="Escribe tu mensaje aquí"
-            className="styledtextarea"
-          ></StyledTextarea>
+            <StyledLabel htmlFor="message" className="styledlabel">
+              Introduce el mensaje:
+            </StyledLabel>
+            <StyledTextarea
+              id="message"
+              name="message"
+              value={message}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setMessage(e.target.value)
+              }
+              required
+              placeholder="Escribe tu mensaje aquí"
+              className="styledtextarea"
+            ></StyledTextarea>
 
-          <RegularButton
-            type="submit"
-            disabled={state.submitting}
-            className="submit-button"
-            $customfontsize="1.4rem"
-          >
-            {state.submitting ? "Enviando" : "Enviar"}
-          </RegularButton>
-        </StyledForm>
-
+            <RegularButton
+              type="submit"
+              disabled={state.submitting}
+              className="submit-button"
+            >
+              {state.submitting ? "Enviando" : "Enviar"}
+            </RegularButton>
+          </StyledForm>
+        )}
         <StyledMap className="StyledMap">
           <MapContainer className="MapContainer" center={position} zoom={14}>
             <TileLayer
@@ -176,7 +199,7 @@ const StyledForm = styled.form`
 `;
 
 const StyledLabel = styled.label`
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 `;
 
 const StyledInput = styled.input`

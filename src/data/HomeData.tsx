@@ -133,7 +133,7 @@ export const proyectsItems: proyectsItems[] = [
     label: "Porfolio",
     linkGitHub: "https://github.com/Balexo/portafolio",
     image: {
-      src: "../../public/icraftyouImagen.JPG",
+      src: "../../public/porfolio.JPG",
       alt: "Proyecto 2",
       href: "https://pagina-del-proyecto2.com",
     },
