@@ -110,7 +110,7 @@ export const proyectsItems: proyectsItems[] = [
     label: "I Craft You",
     linkGitHub: "https://github.com/orgs/byte-bandis/repositories",
     image: {
-      src: "../../public/icraftyouImagen.JPG",
+      src: "/icraftyouImagen.JPG",
       alt: "Proyecto 2",
       href: "https://pagina-del-proyecto2.com",
     },
@@ -133,7 +133,7 @@ export const proyectsItems: proyectsItems[] = [
     label: "Porfolio",
     linkGitHub: "https://github.com/Balexo/portafolio",
     image: {
-      src: "../../public/porfolio.JPG",
+      src: "/porfolio.JPG",
       alt: "Proyecto 2",
       href: "https://pagina-del-proyecto2.com",
     },

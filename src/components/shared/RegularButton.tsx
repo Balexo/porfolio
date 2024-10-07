@@ -15,12 +15,13 @@ interface RegularButtonProps {
   $customRight?: string;
   $customZIndex?: string;
   $customTransition?: string;
+  $specialWidth?: string;
 }
 
 const RegularButton = styled.button<RegularButtonProps>`
-  color: ${(props) => props.$customColor || "var(--lightBeige)"};
+  color: ${(props) => props.$customColor || props.theme.colors.lightBeige};
   background-color: ${(props) =>
-    props.$customBackgroundColor || "var(--navyBlue)"};
+    props.$customBackgroundColor || props.theme.colors.navyBlue};
   cursor: ${(props) => props.$customCursor || "pointer"};
   border-radius: ${(props) => props.$customBorderRadius || "15px"};
   margin: ${(props) => props.$customMargin || "0"};
