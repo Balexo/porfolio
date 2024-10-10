@@ -1,28 +1,32 @@
 import styled from "styled-components";
 import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { landingText } from "../data/HomeData";
 
 const Landing = () => {
   const textRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
-    const text =
-      "  Hola, soy Óscar, desarrollador web full-stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
-    let index = 0;
+    const timeline = gsap.timeline();
 
-    const interval = setInterval(() => {
-      if (index < text.length && textRef.current) {
-        textRef.current.innerHTML += text[index];
-        index++;
-      } else {
-        clearInterval(interval);
+    timeline.add(() => {
+      if (textRef.current?.textContent) {
+        const chars = landingText.split("");
+        textRef.current.innerHTML = chars
+          .map((char, i) => `<span class="char-${i}">${char}</span>`)
+          .join("");
+        chars.forEach((_, i) => {
+          gsap.to(`.char-${i}`, {
+            fontFamily: "'RaleWay Dots', cursive",
+            delay: i * 0.03,
+          });
+        });
       }
-    }, 40);
-
-    return () => clearInterval(interval);
+    });
   }, []);
   return (
     <LandingStyles className="LandingStyles">
-      <p ref={textRef}> </p>
+      <p ref={textRef}>{landingText} </p>
     </LandingStyles>
   );
 };

@@ -6,10 +6,11 @@ import CustomAlert from "./shared/CustomAlert";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import React from "react";
 
 const position: LatLngExpression = [42.8808, -8.54];
 
-export const Contact: React.FC = () => {
+const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(" ");
@@ -178,6 +179,8 @@ export const Contact: React.FC = () => {
     </>
   );
 };
+
+export default React.memo(Contact);
 
 const StyledContact = styled.div`
   display: grid;

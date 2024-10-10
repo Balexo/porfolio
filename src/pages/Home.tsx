@@ -1,20 +1,22 @@
+import { lazy } from "react";
 import Landing from "../components/Landing";
 import Header from "../components/Header";
-import Skills from "../components/Skills";
-import OtherSkills from "../components/OtherSkills";
+// import Skills from "../components/Skills";
 import AboutMe from "../components/AboutMe";
-import Proyects from "../components/Proyects";
-import { Contact } from "../components/Contact";
 import {
   menuItems,
-  skillsItems,
+  // skillsItems,
   proyectsItems,
   learningSkills,
   softSkills,
 } from "../data/HomeData";
 import styled from "styled-components";
-import DownloadCV from "../components/DownloadCV";
 import "./Home.css";
+
+const DownloadCV = lazy(() => import("../components/DownloadCV"));
+const OtherSkills = lazy(() => import("../components/OtherSkills"));
+const Proyects = lazy(() => import("../components/Proyects"));
+const Contact = lazy(() => import("../components/Contact"));
 
 const Home = () => {
   return (
@@ -35,7 +37,7 @@ const Home = () => {
 
         <section id="skills">
           <StyledH1 className="title">Skills</StyledH1>
-          <Skills skillsItems={skillsItems} />
+          {/* <Skills skillsItems={skillsItems} /> */}
           <StyledH1 className="title">Mejorando habilidades</StyledH1>
           <OtherSkills
             learningSkills={learningSkills}

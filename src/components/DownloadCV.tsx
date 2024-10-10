@@ -1,6 +1,7 @@
 import RegularButton from "./shared/RegularButton";
 import styled from "styled-components";
 import { useEffect } from "react";
+import throttle from "lodash/throttle";
 
 const DownloadCV = () => {
   const handleDownload = () => {
@@ -14,7 +15,7 @@ const DownloadCV = () => {
 
   useEffect(() => {
     const button = document.querySelector(".StyledDownloadCV");
-    const handleScroll = () => {
+    const handleScroll = throttle(() => {
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
@@ -22,7 +23,7 @@ const DownloadCV = () => {
       } else {
         button?.classList.add("lower");
       }
-    };
+    }, 1000);
 
     button?.classList.add("lower");
 
@@ -53,10 +54,10 @@ const StyledDownloadCV = styled.div`
   top: 10px;
   right: 15px;
   z-index: 10;
-  transition: top 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 
   &.lower {
-    top: 400px;
+    transform: translateY(400px);
   }
 
   @media (max-width: 768px) {

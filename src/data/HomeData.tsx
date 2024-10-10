@@ -34,6 +34,9 @@ export const menuItems: menuItems[] = [
   { label: "Contacto", sectionId: "contact" },
 ];
 
+export const landingText: string =
+  "Hola, soy Óscar, desarrollador web full-stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
+
 interface skillsItems {
   label: string;
   icon: IconType;

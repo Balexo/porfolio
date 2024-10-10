@@ -3,6 +3,7 @@ import RegularButton from "./shared/RegularButton";
 import { FaLinkedin, FaGithub, FaBars } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdArrowRoundUp } from "react-icons/io";
+import throttle from "lodash/throttle";
 
 interface MenuItem {
   label: string;
@@ -16,17 +17,19 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleScrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      const yOffset = -60;
-      const y =
-        sectionElement.getBoundingClientRect().top + window.scrollY + yOffset;
+  const handleScrollToSection = throttle((sectionId: string) => {
+    requestAnimationFrame(() => {
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        const yOffset = -60;
+        const rect = sectionElement.getBoundingClientRect();
+        const y = rect.top + window.scrollY + yOffset;
 
-      window.scrollTo({ top: y, behavior: "smooth" });
-      setShowMenu(false);
-    }
-  };
+        window.scrollTo({ top: y, behavior: "smooth" });
+        setShowMenu(false);
+      }
+    });
+  }, 500);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);

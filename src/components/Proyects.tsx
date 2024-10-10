@@ -126,6 +126,7 @@ const StyledImage = styled.img`
   margin: 1rem 0rem;
   height: 250px;
   width: auto;
+  z-index: 25;
 
   &:hover {
     transform: scale(1.2);
@@ -140,8 +141,8 @@ const StyledIcons = styled.div`
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  margin-left: -35px;
-  gap: 15px;
+
+  gap: 10px;
   color: var(--navyBlue);
 
   @media (max-width: 768px) {
