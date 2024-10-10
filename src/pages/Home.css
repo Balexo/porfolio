@@ -20,4 +20,5 @@ body {
   font-family: "Raleway", sans-serif;
   background-color: var(--lightBeige);
   font-size: 1.2rem;
+  font-size-adjust: 0.58;
 }

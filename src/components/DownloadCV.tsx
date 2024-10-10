@@ -51,13 +51,13 @@ export default DownloadCV;
 
 const StyledDownloadCV = styled.div`
   position: fixed;
-  top: 10px;
+  top: 40px;
   right: 15px;
   z-index: 10;
   transition: transform 0.6s ease-in-out;
 
   &.lower {
-    transform: translateY(400px);
+    transform: translateY(550px);
   }
 
   @media (max-width: 768px) {

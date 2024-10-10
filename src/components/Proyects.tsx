@@ -50,8 +50,8 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
               <StyledImage
                 src={item.image.src}
                 alt={item.image.alt}
-                width={item.image.width}
-                height={item.image.height}
+                width={item.image.width ? `${item.image.width}px` : "auto"}
+                height={item.image.height ? `${item.image.height}px` : "250px"}
                 className="proyect-image"
               />
             </StyledWebLink>
@@ -124,8 +124,8 @@ const StyledWebLink = styled.a`
 
 const StyledImage = styled.img`
   margin: 1rem 0rem;
-  height: 250px;
-  width: auto;
+  height: ${(props) => props.height || "250px"};
+  width: ${(props) => props.width || "auto"};
   z-index: 25;
 
   &:hover {

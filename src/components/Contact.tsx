@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
               id="message"
               name="message"
               value={message}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                 setMessage(e.target.value)
               }
               required

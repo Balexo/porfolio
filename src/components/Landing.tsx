@@ -7,23 +7,24 @@ const Landing = () => {
   const textRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
-    const timeline = gsap.timeline();
-
-    timeline.add(() => {
-      if (textRef.current?.textContent) {
-        const chars = landingText.split("");
-        textRef.current.innerHTML = chars
-          .map((char, i) => `<span class="char-${i}">${char}</span>`)
-          .join("");
-        chars.forEach((_, i) => {
-          gsap.to(`.char-${i}`, {
-            fontFamily: "'RaleWay Dots', cursive",
-            delay: i * 0.03,
-          });
-        });
-      }
-    });
+    if (textRef.current) {
+      const chars = landingText.split("");
+      textRef.current.innerHTML = chars
+        .map((char, i) => `<span class="char-${i}">${char}</span>`)
+        .join("");
+      const animation = gsap.to(
+        chars.map((_, i) => `.char-${i}`),
+        {
+          fontFamily: "'Raleway Dots', cursive",
+          stagger: 0.03,
+        },
+      );
+      return () => {
+        animation.kill();
+      };
+    }
   }, []);
+
   return (
     <LandingStyles className="LandingStyles">
       <p ref={textRef}>{landingText} </p>

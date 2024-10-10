@@ -1,11 +1,10 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import Landing from "../components/Landing";
 import Header from "../components/Header";
-// import Skills from "../components/Skills";
 import AboutMe from "../components/AboutMe";
 import {
   menuItems,
-  // skillsItems,
+  skillsItems,
   proyectsItems,
   learningSkills,
   softSkills,
@@ -14,6 +13,7 @@ import styled from "styled-components";
 import "./Home.css";
 
 const DownloadCV = lazy(() => import("../components/DownloadCV"));
+const Skills = lazy(() => import("../components/Skills"));
 const OtherSkills = lazy(() => import("../components/OtherSkills"));
 const Proyects = lazy(() => import("../components/Proyects"));
 const Contact = lazy(() => import("../components/Contact"));
@@ -26,41 +26,43 @@ const Home = () => {
         <CodeBackground className="code">
           <p>CODE</p>
         </CodeBackground>
-        <DownloadCV />
+        <Suspense fallback={<div>Loading...</div>}>
+          <DownloadCV />
 
-        <Landing />
+          <Landing />
 
-        <section id="about-me">
-          <StyledH1 className="title without-margin">Sobre mí</StyledH1>
-          <AboutMe />
-        </section>
+          <section id="about-me">
+            <StyledH1 className="title without-margin">Sobre mí</StyledH1>
+            <AboutMe />
+          </section>
 
-        <section id="skills">
-          <StyledH1 className="title">Skills</StyledH1>
-          {/* <Skills skillsItems={skillsItems} /> */}
-          <StyledH1 className="title">Mejorando habilidades</StyledH1>
-          <OtherSkills
-            learningSkills={learningSkills}
-            columns={2}
-            columnsMax768px={1}
-          />
-          <StyledH1 className="title">Habilidades blandas</StyledH1>
-          <OtherSkills
-            learningSkills={softSkills}
-            columns={4}
-            columnsMax768px={1}
-          />
-        </section>
+          <section id="skills">
+            <StyledH1 className="title">Skills</StyledH1>
+            <Skills skillsItems={skillsItems} />
+            <StyledH1 className="title">Mejorando habilidades</StyledH1>
+            <OtherSkills
+              learningSkills={learningSkills}
+              columns={2}
+              columnsMax768px={1}
+            />
+            <StyledH1 className="title">Habilidades blandas</StyledH1>
+            <OtherSkills
+              learningSkills={softSkills}
+              columns={4}
+              columnsMax768px={1}
+            />
+          </section>
 
-        <section id="projects">
-          <StyledH1 className="title">Proyectos</StyledH1>
-          <Proyects proyectsItems={proyectsItems} />
-        </section>
+          <section id="projects">
+            <StyledH1 className="title">Proyectos</StyledH1>
+            <Proyects proyectsItems={proyectsItems} />
+          </section>
 
-        <section id="contact">
-          <StyledH1 className="title">Contacto</StyledH1>
-          <Contact />
-        </section>
+          <section id="contact">
+            <StyledH1 className="title">Contacto</StyledH1>
+            <Contact />
+          </section>
+        </Suspense>
       </StyledBody>
     </>
   );

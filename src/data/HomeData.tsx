@@ -1,25 +1,33 @@
-import { SiJavascript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaNode } from "react-icons/fa6";
-import { SiExpress } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
-import { SiJest } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaAws,
+  FaGithub,
+  FaLightbulb,
+  FaBookOpen,
+  FaTree,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
-import { FaPeopleCarryBox } from "react-icons/fa6";
-import { FaRocket } from "react-icons/fa";
-import { FaScaleBalanced } from "react-icons/fa6";
-import { FaMagnifyingGlass } from "react-icons/fa6";
-import { FaLightbulb } from "react-icons/fa";
-import { FaBookOpen } from "react-icons/fa";
-import { FaTree } from "react-icons/fa";
-import { FaCalendarAlt } from "react-icons/fa";
+import {
+  FaPeopleCarryBox,
+  FaRocket,
+  FaScaleBalanced,
+  FaMagnifyingGlass,
+  FaNode,
+} from "react-icons/fa6";
+
+import {
+  SiJavascript,
+  SiRedux,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiJest,
+  SiTypescript,
+} from "react-icons/si";
+
 import { IconType } from "react-icons";
 
 interface menuItems {
@@ -35,7 +43,7 @@ export const menuItems: menuItems[] = [
 ];
 
 export const landingText: string =
-  "Hola, soy Óscar, desarrollador web full-stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
+  "Hola, soy Óscar, desarrollador web Full Stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
 
 interface skillsItems {
   label: string;
@@ -114,7 +122,7 @@ export const proyectsItems: proyectsItems[] = [
     linkGitHub: "https://github.com/orgs/byte-bandis/repositories",
     image: {
       src: "/icraftyouImagen.JPG",
-      alt: "Proyecto 2",
+      alt: "Proyecto I Craft You",
       href: "https://pagina-del-proyecto2.com",
     },
     link: "https://icraftyou.es/",
@@ -137,7 +145,7 @@ export const proyectsItems: proyectsItems[] = [
     linkGitHub: "https://github.com/Balexo/portafolio",
     image: {
       src: "/porfolio.JPG",
-      alt: "Proyecto 2",
+      alt: "Proyecto porfolio personal",
       href: "https://pagina-del-proyecto2.com",
     },
     link: "https://icraftyou.es/",
