@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://oscarvallejo.es/sitemap.xml

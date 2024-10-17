@@ -38,6 +38,7 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="project-link-github"
+              aria-label="Visita mi proyecto en GitHub"
             >
               <FaGithub />
             </StyledGitHubLink>
@@ -45,13 +46,14 @@ const Proyects: React.FC<MenuProps> = ({ proyectsItems }) => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={item.linkDescription}
               className="project-link-web"
             >
               <StyledImage
                 src={item.image.src}
                 alt={item.image.alt}
-                width={item.image.width ? `${item.image.width}px` : "auto"}
-                height={item.image.height ? `${item.image.height}px` : "250px"}
+                width={item.image.width ? `${item.image.width}px` : "390"}
+                height={item.image.height ? `${item.image.height}px` : "240"}
                 className="proyect-image"
               />
             </StyledWebLink>
@@ -100,11 +102,11 @@ const StyledProyectItem = styled.ul`
   padding: 1rem 0rem;
 `;
 
-const StyledTitleProyect = styled.h3`
+const StyledTitleProyect = styled.h2`
   text-align: center;
   font-size: 1.8rem;
   font-style: italic;
-  color: var(--navyBlue);
+  color: var(--lightBeige);
   margin: 20px 0px;
 `;
 
@@ -133,7 +135,8 @@ const StyledImage = styled.img`
   }
 
   @media (max-width: 768px) {
-    height: 200px;
+    height: 175px;
+    width: 100%;
   }
 `;
 
@@ -146,7 +149,7 @@ const StyledIcons = styled.div`
   color: var(--navyBlue);
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.6rem;
     gap: 10px;
   }
 `;

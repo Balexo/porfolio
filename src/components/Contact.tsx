@@ -189,6 +189,7 @@ const StyledContact = styled.div`
 
    @media (max-width: 768px) {
    grid-template-columns: 1fr;
+   margin: auto 0px auto 14px;
 `;
 
 const StyledForm = styled.form`
@@ -199,6 +200,7 @@ const StyledForm = styled.form`
 
     @media (max-width: 768px) {
     gap: 0rem;
+    margin: 0px;
 `;
 
 const StyledLabel = styled.label`
@@ -207,17 +209,18 @@ const StyledLabel = styled.label`
 
 const StyledInput = styled.input`
   padding: 1.2rem;
+  width: 78%;
 `;
 
 const StyledTextarea = styled.textarea`
   height: 14rem;
-  width: 100%;
+  width: 90%;
 `;
 
 const StyledMap = styled.div`
   height: 450px;
   width: 450px;
-
+  z-index: 2;
   margin: 0px auto;
 
   .MapContainer {
@@ -226,8 +229,9 @@ const StyledMap = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 550px;
-    width: 350px;
+    height: 400px;
+    width: 330px;
     margin-bottom: 5rem;
+    margin: 0px;
   }
 `;

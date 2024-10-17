@@ -43,7 +43,10 @@ export const menuItems: menuItems[] = [
 ];
 
 export const landingText: string =
-  "Hola, soy Óscar, desarrollador web Full Stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi portafolio.";
+  "Hola, soy Óscar, desarrollador web Full Stack con experiencia en React, Node.js y MongoDB. Te invito a visitar mi porfolio.";
+
+export const aboutOscar: string =
+  "Soy un desarrollador full stack con habilidades en HTML, CSS, JavaScript, Node.js, React y MongoDB. Mi experiencia en el desarrollo web me permite abordar proyectos de manera eficiente y asegurar la escalabilidad, disponibilidad y seguridad de las aplicaciones en entornos de producción. Estoy continuamente ampliando mis conocimientos y busco seguir mejorarando mis habilidades en las últimas tendencias y tecnologías. Dedicado y apasionado hacía un enfoque en la calidad y la atención al detalle en cada proyecto que entrego. Estoy comprometido a entregar soluciones de alta calidad y ampliar mis conocimientos.";
 
 interface skillsItems {
   label: string;
@@ -112,6 +115,7 @@ export interface proyectsItems {
   linkGitHub: string;
   image: imageObject;
   link: string;
+  linkDescription: string;
   icon: iconArray[];
   description: string;
 }
@@ -121,11 +125,12 @@ export const proyectsItems: proyectsItems[] = [
     label: "I Craft You",
     linkGitHub: "https://github.com/orgs/byte-bandis/repositories",
     image: {
-      src: "/icraftyouImagen.JPG",
+      src: "/ICraftYouImage.JPG",
       alt: "Proyecto I Craft You",
       href: "https://pagina-del-proyecto2.com",
     },
     link: "https://icraftyou.es/",
+    linkDescription: "Visita mi proyecto de I Craft You en GitHub.",
     icon: [
       { label: "JavaScript", icon: SiJavascript },
       { label: "React", icon: FaReact },
@@ -146,9 +151,10 @@ export const proyectsItems: proyectsItems[] = [
     image: {
       src: "/porfolio.JPG",
       alt: "Proyecto porfolio personal",
-      href: "https://pagina-del-proyecto2.com",
+      href: "https://oscarvallejo.es/",
     },
-    link: "https://icraftyou.es/",
+    link: "https://oscarvallejo.es/",
+    linkDescription: "Visita mi proyecto de porfolio personal en GitHub.",
     icon: [
       { label: "React", icon: FaReact },
       { label: "TypeScript", icon: SiTypescript },

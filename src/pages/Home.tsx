@@ -112,7 +112,7 @@ const CodeBackground = styled.div`
     2px 2px 0 rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
-    font-size: 120px;
+    font-size: 5.6rem;
     left: 10px;
     top: 80px;
   }

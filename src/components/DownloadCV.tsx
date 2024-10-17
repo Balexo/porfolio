@@ -5,7 +5,7 @@ import throttle from "lodash/throttle";
 
 const DownloadCV = () => {
   const handleDownload = () => {
-    const cvLink = "../../public/OSCAR_VALLEJO_CV.pdf";
+    const cvLink = " /OSCAR_VALLEJO_CV.pdf";
 
     const link = document.createElement("a");
     link.href = cvLink;
@@ -61,6 +61,10 @@ const StyledDownloadCV = styled.div`
   }
 
   @media (max-width: 768px) {
-    top: 55px;
+    top: 50px;
+
+    &.lower {
+      transform: translateY(420px);
+    }
   }
 `;

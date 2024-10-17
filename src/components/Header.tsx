@@ -66,6 +66,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             $customPadding="0.5rem"
             $customWidth="100px"
             $specialWidth="60px"
+            aria-label="Sube scroll en la página a la sección de sobre mi"
           >
             <IoMdArrowRoundUp height="2em" width="2em" />
           </RegularButton>
@@ -76,6 +77,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             href="https://github.com/Balexo"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visita mi perfil de GitHub"
           >
             <StyledGithub className="StyledGithub" />
           </a>
@@ -83,6 +85,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             href="https://www.linkedin.com/in/oscarvallejoparedes/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visita mi perfil de LinkedIn"
           >
             <StyledLinkedin className="StyledLinkedin" />
           </a>
@@ -99,7 +102,7 @@ const HeaderStyle = styled.nav`
   background-color: var(--gray);
   position: fixed;
   width: 20rem;
-  z-index: 2;
+  z-index: 40;
   top: 0;
   left: 0;
   right: 0;

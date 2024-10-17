@@ -44,6 +44,7 @@ const RegularButton = styled.button<RegularButtonProps>`
     font-size: 1rem;
     padding: 1rem;
     width: ${(props) => props.$specialWidth || props.$customWidth || "130px"};
+    margin-top: 10px;
   }
 `;
 
