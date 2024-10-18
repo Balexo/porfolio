@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
       await handleSubmit(e);
 
       try {
-        if (state.succeeded) {
+        if (state.succeeded || errors.length === 0) {
           setShowAlert(true);
           setSuccessMessage([
             "Correo enviado correctamente! Gracias por contactar, pronto recibirás respuesta.",
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
     if (showAlert) {
       const timer = setTimeout(() => {
         setShowAlert(false);
-      }, 6000);
+      }, 60000);
       return () => clearTimeout(timer);
     }
   }, [showAlert]);

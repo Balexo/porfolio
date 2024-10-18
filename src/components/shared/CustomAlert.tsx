@@ -39,20 +39,26 @@ const StyledAlert = styled.div`
 
 const CloseButton = styled.button`
   position: relative;
-  top: 45px;
-  left: 450px;
+  top: 50px;
+  left: 33vw;
+  transform: translate(-100%, 0);
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 5;
   background: none;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    top: 50px;
+    left: 85vw;
+  }
 `;
-const ErrorMessageStyled = styled.p`
+const ErrorMessageStyled = styled.div`
   background-color: var(--darkRed);
   padding: 1rem;
 `;
-const SuccesMessageStyled = styled.p`
+const SuccesMessageStyled = styled.div`
   background-color: var(--darkGreen);
   padding: 1rem;
 `;
