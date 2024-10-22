@@ -1,4 +1,3 @@
-// theme.ts
 const theme = {
   colors: {
     lightBeige: "#e8e4e2ff",

@@ -19,9 +19,12 @@ interface RegularButtonProps {
 }
 
 const RegularButton = styled.button<RegularButtonProps>`
-  color: ${(props) => props.$customColor || props.theme.colors.lightBeige};
+  color: ${(props) => {
+    console.log("Theme:", props.theme);
+    return props.$customColor || props.theme?.colors.lightBeige;
+  }};
   background-color: ${(props) =>
-    props.$customBackgroundColor || props.theme.colors.navyBlue};
+    props.$customBackgroundColor || props.theme?.colors.navyBlue};
   cursor: ${(props) => props.$customCursor || "pointer"};
   border-radius: ${(props) => props.$customBorderRadius || "15px"};
   margin: ${(props) => props.$customMargin || "0"};
@@ -39,7 +42,6 @@ const RegularButton = styled.button<RegularButtonProps>`
   transition: ${(props) =>
     props.$customTransition || "background-color .3s ease, color .3s ease"};
   text-wrap: nowrap;
-
   @media (max-width: 768px) {
     font-size: 1rem;
     padding: 1rem;

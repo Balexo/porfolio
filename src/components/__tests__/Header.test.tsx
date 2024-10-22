@@ -1,6 +1,8 @@
 // Header.test.tsx
-import { render, screen } from "../../setupTests";
+import { render, screen } from "@testing-library/react";
 import Header from "../Header";
+import { ThemeProvider } from "styled-components";
+import theme from "../../theme";
 
 describe("Header", () => {
   const mockMenuItems = [
@@ -8,16 +10,18 @@ describe("Header", () => {
     { label: "About", sectionId: "about" },
   ];
 
-  it("renders correctly with menu items", () => {
-    render(<Header menuItems={mockMenuItems} />);
+  const renderWithTheme = (component: React.ReactElement) => {
+    return render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
+  };
 
+  it("renders correctly with menu items", () => {
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.getByText("About")).toBeInTheDocument();
   });
 
   it("displays the logo", () => {
-    render(<Header menuItems={mockMenuItems} />);
-
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
     const logo = screen.getByText("CODE");
     expect(logo).toBeInTheDocument();
   });

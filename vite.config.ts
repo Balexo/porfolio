@@ -27,6 +27,9 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.tsx",
+    // alias: {
+    //   "styled-components": "/__mocks__/styled-components.tsx",
+    // },
     coverage: {
       provider: "istanbul",
       all: true,
