@@ -36,13 +36,23 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   };
   return (
     <>
-      <HeaderStyle className="HeaderStyle">
+      <NavSection className="NavSection">
         <Logo>CODE</Logo>
 
-        <BurgerMenu onClick={toggleMenu} className="BurgerMenu">
+        <BurgerMenu
+          onClick={toggleMenu}
+          className="BurgerMenu"
+          role="button"
+          aria-label="abrir menú"
+        >
           <FaBars size={40} />
         </BurgerMenu>
-        <NavSection $showMenu={showMenu} className="NavSection">
+
+        <MenuSection
+          $showMenu={showMenu}
+          className="MenuSection"
+          aria-label="sección del menú"
+        >
           {menuItems.map((item) => (
             <RegularButton
               className="RegularButton"
@@ -57,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
               {item.label}
             </RegularButton>
           ))}
-        </NavSection>
+        </MenuSection>
 
         <UpButton className="upButton">
           <RegularButton
@@ -90,14 +100,14 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
             <StyledLinkedin className="StyledLinkedin" />
           </a>
         </Linkssection>
-      </HeaderStyle>
+      </NavSection>
     </>
   );
 };
 
 export default Header;
 
-const HeaderStyle = styled.nav`
+const NavSection = styled.nav`
   height: 100vh;
   background-color: var(--gray);
   position: fixed;
@@ -148,8 +158,8 @@ const BurgerMenu = styled.div`
   }
 `;
 
-const NavSection = styled.div<{ $showMenu: boolean }>`
-  display: flex;
+const MenuSection = styled.div<{ $showMenu: boolean }>`
+  display: ${({ $showMenu }) => ($showMenu ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
   justify-content: ${({ $showMenu }) => ($showMenu ? "center" : "flex-start")};
@@ -162,8 +172,6 @@ const NavSection = styled.div<{ $showMenu: boolean }>`
     position: absolute;
     top: 50px;
     left: 0px;
-    overflow: ${({ $showMenu }) => ($showMenu ? "visible" : "hidden")};
-    max-height: ${({ $showMenu }) => ($showMenu ? "350px" : "0px")};
     flex-direction: column;
     justify-content: center;
     align-items: center;

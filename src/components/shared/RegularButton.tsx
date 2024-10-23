@@ -20,7 +20,6 @@ interface RegularButtonProps {
 
 const RegularButton = styled.button<RegularButtonProps>`
   color: ${(props) => {
-    console.log("Theme:", props.theme);
     return props.$customColor || props.theme?.colors.lightBeige;
   }};
   background-color: ${(props) =>

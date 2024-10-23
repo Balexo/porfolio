@@ -1,28 +1,86 @@
-// Header.test.tsx
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Header from "../Header";
 import { ThemeProvider } from "styled-components";
 import theme from "../../theme";
+import { vi } from "vitest";
+import { waitFor } from "@testing-library/react";
 
 describe("Header", () => {
   const mockMenuItems = [
-    { label: "Home", sectionId: "home" },
-    { label: "About", sectionId: "about" },
+    { label: "Sobre mi", sectionId: "about-me" },
+    { label: "Skills", sectionId: "skills" },
+    { label: "Proyectos", sectionId: "projects" },
+    { label: "Contacto", sectionId: "contact" },
   ];
 
   const renderWithTheme = (component: React.ReactElement) => {
     return render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
   };
 
+  beforeEach(() => {
+    Object.defineProperty(window, "scrollTo", {
+      value: vi.fn(),
+      writable: true,
+    });
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   it("renders correctly with menu items", () => {
     renderWithTheme(<Header menuItems={mockMenuItems} />);
-    expect(screen.getByText("Home")).toBeInTheDocument();
-    expect(screen.getByText("About")).toBeInTheDocument();
+    expect(screen.getByText("Sobre mi")).toBeInTheDocument();
+    expect(screen.getByText("Skills")).toBeInTheDocument();
   });
 
   it("displays the logo", () => {
     renderWithTheme(<Header menuItems={mockMenuItems} />);
     const logo = screen.getByText("CODE");
     expect(logo).toBeInTheDocument();
+  });
+
+  it("toggles the menu when clicked", () => {
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
+
+    const burgerMenu = screen.getByLabelText(/abrir menú/i);
+    const menuSection = screen.getByLabelText(/sección del menú/i);
+
+    expect(menuSection).not.toBeVisible();
+
+    fireEvent.click(burgerMenu);
+
+    expect(menuSection).toBeVisible();
+
+    fireEvent.click(burgerMenu);
+
+    expect(menuSection).not.toBeVisible();
+  });
+
+  it("click in navegation menu buttons to go to pages sections", async () => {
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
+
+    const aboutMeSection = document.createElement("div");
+    aboutMeSection.id = "about-me";
+    document.body.appendChild(aboutMeSection);
+
+    const sobreMiButton = screen.getByText(/Sobre mi/i);
+
+    fireEvent.click(sobreMiButton);
+
+    await waitFor(() => {
+      expect(window.scrollTo).toHaveBeenCalled();
+    });
+
+    const yOffset = -60;
+    const rect = aboutMeSection.getBoundingClientRect();
+    const expectedY = rect.top + window.scrollY + yOffset;
+
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: expectedY,
+      behavior: "smooth",
+    });
+
+    document.body.removeChild(aboutMeSection);
   });
 });

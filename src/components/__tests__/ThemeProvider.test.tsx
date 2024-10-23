@@ -11,7 +11,7 @@ describe("ThemeProvider", () => {
         <TestComponent />
       </ThemeProvider>,
     );
-    screen.debug(); // Debug output
+
     const button = screen.getByRole("button", { name: /test button/i });
     expect(button).toBeInTheDocument();
   });
