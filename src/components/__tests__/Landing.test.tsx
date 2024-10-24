@@ -14,16 +14,24 @@ vi.spyOn(gsap, "to").mockImplementation(
     }) as any,
 );
 
-describe("First letter of Landing Component", () => {
+describe("Landing Component", () => {
   const renderWithTheme = (component: React.ReactElement) => {
     return render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
   };
-  screen.debug();
+
   it("renders landing text correctly", () => {
     renderWithTheme(<Landing />);
 
-    const paragraph = screen.getByText(landingText[0]);
-    expect(paragraph).toBeInTheDocument();
+    landingText.split("").forEach((char, index) => {
+      if (char.trim() !== "") {
+        const spans = screen.getAllByText(char);
+
+        const matchingSpan = spans.find((span) =>
+          span.classList.contains(`char-${index}`),
+        );
+        expect(matchingSpan).toBeInTheDocument();
+      }
+    });
   });
 
   it("applies animation to each character", () => {

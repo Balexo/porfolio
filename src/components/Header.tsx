@@ -159,7 +159,7 @@ const BurgerMenu = styled.div`
 `;
 
 const MenuSection = styled.div<{ $showMenu: boolean }>`
-  display: ${({ $showMenu }) => ($showMenu ? "flex" : "none")};
+  display: ${({ $showMenu }) => ($showMenu ? "none" : "flex")};
   flex-direction: column;
   align-items: center;
   justify-content: ${({ $showMenu }) => ($showMenu ? "center" : "flex-start")};

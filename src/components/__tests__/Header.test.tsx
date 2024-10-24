@@ -5,6 +5,16 @@ import theme from "../../theme";
 import { vi } from "vitest";
 import { waitFor } from "@testing-library/react";
 
+beforeAll(() => {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: (query: string) => ({
+      matches: query === "(max-width:768px)",
+      media: query,
+    }),
+  });
+});
+
 describe("Header", () => {
   const mockMenuItems = [
     { label: "Sobre mi", sectionId: "about-me" },
@@ -40,21 +50,33 @@ describe("Header", () => {
     expect(logo).toBeInTheDocument();
   });
 
+  it("hides burguer menu on screen size <768px", () => {
+    window.matchMedia("(max-width:768px)").matches === true;
+
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
+
+    const burguerMenu = screen.queryByLabelText(/abrir menú/i);
+
+    expect(burguerMenu).not.toBeVisible();
+  });
+
   it("toggles the menu when clicked", () => {
+    window.matchMedia("max-width: 768px").matches === true;
+
     renderWithTheme(<Header menuItems={mockMenuItems} />);
 
     const burgerMenu = screen.getByLabelText(/abrir menú/i);
     const menuSection = screen.getByLabelText(/sección del menú/i);
-
-    expect(menuSection).not.toBeVisible();
-
-    fireEvent.click(burgerMenu);
 
     expect(menuSection).toBeVisible();
 
     fireEvent.click(burgerMenu);
 
     expect(menuSection).not.toBeVisible();
+
+    fireEvent.click(burgerMenu);
+
+    expect(menuSection).toBeVisible();
   });
 
   it("click in navegation menu buttons to go to pages sections", async () => {
