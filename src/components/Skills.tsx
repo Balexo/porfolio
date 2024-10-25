@@ -22,7 +22,7 @@ const Skills: React.FC<SkillsProps> = ({ skillsItems }) => {
 
           <ProgressBar>
             <Progress
-              className="skill-bar-progress"
+              className={`skill-bar-progress-${item.label}`}
               style={{ width: `${item.porcentage}` }}
             />
           </ProgressBar>
