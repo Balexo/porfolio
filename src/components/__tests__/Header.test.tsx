@@ -83,4 +83,16 @@ describe("Header", () => {
 
     document.body.removeChild(aboutMeSection);
   });
+  it("links to GitHub and LinkedIn links", () => {
+    renderWithTheme(<Header menuItems={mockMenuItems} />);
+
+    const githubLink = screen.getByLabelText("Visita mi perfil de GitHub");
+    const linkedInLink = screen.getByLabelText("Visita mi perfil de LinkedIn");
+
+    expect(githubLink).toHaveAttribute("href", "https://github.com/Balexo");
+    expect(linkedInLink).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/oscarvallejoparedes/",
+    );
+  });
 });

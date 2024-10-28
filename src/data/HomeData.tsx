@@ -48,7 +48,7 @@ export const landingText: string =
 export const aboutOscar: string =
   "Soy un desarrollador full stack con habilidades en HTML, CSS, JavaScript, Node.js, React y MongoDB. Mi experiencia en el desarrollo web me permite abordar proyectos de manera eficiente y asegurar la escalabilidad, disponibilidad y seguridad de las aplicaciones en entornos de producción. Estoy continuamente ampliando mis conocimientos y busco seguir mejorarando mis habilidades en las últimas tendencias y tecnologías. Dedicado y apasionado hacía un enfoque en la calidad y la atención al detalle en cada proyecto que entrego. Estoy comprometido a entregar soluciones de alta calidad y ampliar mis conocimientos.";
 
-interface skillsItems {
+export interface skillsItems {
   label: string;
   icon: IconType;
   porcentage: string;
@@ -70,7 +70,7 @@ export const skillsItems: skillsItems[] = [
   { label: "AWS", icon: FaAws, porcentage: "20%" },
 ];
 
-interface learningSkills {
+export interface learningSkills {
   icon: IconType;
   text: string;
 }
@@ -81,7 +81,7 @@ export const learningSkills: learningSkills[] = [
   { icon: SiMongodb, text: "Optimizando consultas y agregaciones" },
 ];
 
-interface softSkills {
+export interface softSkills {
   icon: IconType;
   text: string;
 }

@@ -10,7 +10,6 @@ import {
   softSkills,
 } from "../data/HomeData";
 import styled from "styled-components";
-import "./Home.css";
 
 const DownloadCV = lazy(() => import("../components/DownloadCV"));
 const Skills = lazy(() => import("../components/Skills"));

@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import CustomAlert from "../shared/CustomAlert";
 import { vi } from "vitest";
+import { ThemeProvider } from "styled-components";
+import theme from "../../theme";
 
 describe("CustomAlert", () => {
   const mockOnClose = vi.fn();
@@ -9,9 +11,13 @@ describe("CustomAlert", () => {
     vi.clearAllMocks();
   });
 
+  const renderWithTheme = (component: React.ReactElement) => {
+    return render(<ThemeProvider theme={theme}>{component}</ThemeProvider>);
+  };
+
   it("renders error messages correctly", () => {
     const messages = ["Error message 1", "Error message 2"];
-    render(
+    renderWithTheme(
       <CustomAlert message={messages} type="error" onClose={mockOnClose} />,
     );
 
@@ -25,7 +31,7 @@ describe("CustomAlert", () => {
 
   it("renders success messages correctly", () => {
     const messages = ["Success message 1", "Success message 2"];
-    render(
+    renderWithTheme(
       <CustomAlert message={messages} type="success" onClose={mockOnClose} />,
     );
 
@@ -38,7 +44,7 @@ describe("CustomAlert", () => {
   });
 
   it("calls onClose when close button is clicked", () => {
-    render(
+    renderWithTheme(
       <CustomAlert
         message={["Sample message"]}
         type="success"
@@ -53,7 +59,7 @@ describe("CustomAlert", () => {
 
   it("applies the correct background color for error messages", () => {
     const messages = ["Error message"];
-    render(
+    renderWithTheme(
       <CustomAlert message={messages} type="error" onClose={mockOnClose} />,
     );
     const errorMessageContainer =
@@ -64,7 +70,7 @@ describe("CustomAlert", () => {
 
   it("applies the correct background color for success messages", () => {
     const messages = ["Success message"];
-    render(
+    renderWithTheme(
       <CustomAlert message={messages} type="success" onClose={mockOnClose} />,
     );
     const successMessageContainer =

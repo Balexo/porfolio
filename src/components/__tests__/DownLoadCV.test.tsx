@@ -28,7 +28,7 @@ describe("DownloadCV", () => {
     const { container } = renderWithTheme(<DownloadCV />);
     const createElementSpy = vi.spyOn(document, "createElement");
     const downloadButton = container.querySelector("button");
-    screen.debug();
+
     fireEvent.click(downloadButton!);
 
     expect(createElementSpy).toHaveBeenCalledWith("a");
