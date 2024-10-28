@@ -58,7 +58,6 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
               className="RegularButton"
               key={item.label}
               $customWidth="220px"
-              $customBackgroundColor="var(--navyBlue)"
               onClick={() => {
                 handleScrollToSection(item.sectionId);
                 setShowMenu(false);
@@ -109,7 +108,7 @@ export default Header;
 
 const NavSection = styled.nav`
   height: 100vh;
-  background-color: var(--gray);
+  background-color: ${(props) => props.theme.colors.gray};
   position: fixed;
   width: 20rem;
   z-index: 40;
@@ -135,8 +134,8 @@ const NavSection = styled.nav`
 `;
 
 const Logo = styled.div`
-  font-family: "Bungee Outline", sans-serif;
-  color: var(--navyBlue);
+  font-family: ${(props) => props.theme.fonts.logo};
+  color: ${(props) => props.theme.colors.navyBlue};
   font-weight: bold;
   text-align: center;
   font-size: 5rem;
@@ -154,7 +153,7 @@ const BurgerMenu = styled.div`
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
-    color: white;
+    color: ${(props) => props.theme.colors.lightBeige};
   }
 `;
 
@@ -168,7 +167,7 @@ const MenuSection = styled.div<{ $showMenu: boolean }>`
 
   @media (max-width: 768px) {
     width: 100%;
-    background-color: #c2c2c0ff;
+    background-color: ${(props) => props.theme.colors.silver};
     position: absolute;
     top: 50px;
     left: 0px;
@@ -202,7 +201,7 @@ const Linkssection = styled.div`
 
 const StyledGithub = styled(FaGithub)`
   font-size: 50px;
-  color: var(--mustardYellow);
+  color: ${(props) => props.theme.colors.mustardYellow};
 
   @media (max-width: 768px) {
     font-size: 40px;
@@ -211,7 +210,7 @@ const StyledGithub = styled(FaGithub)`
 
 const StyledLinkedin = styled(FaLinkedin)`
   font-size: 50px;
-  color: var(--mustardYellow);
+  color: ${(props) => props.theme.colors.mustardYellow};
 
   @media (max-width: 768px) {
     font-size: 40px;

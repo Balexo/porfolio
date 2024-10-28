@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1729883363810" clover="3.2.0">
+  <project timestamp="1729883363811" name="All files">
+    <metrics statements="208" coveredstatements="102" conditionals="81" coveredconditionals="41" methods="69" coveredmethods="39" elements="358" coveredelements="182" complexity="0" loc="208" ncloc="208" packages="5" files="15" classes="15"/>
+    <package name="src">
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="App.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/App.tsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="main.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/main.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="theme.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/theme.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="163" coveredstatements="70" conditionals="48" coveredconditionals="8" methods="44" coveredmethods="21"/>
+      <file name="AboutMe.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/AboutMe.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="Contact.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/Contact.tsx">
+        <metrics statements="60" coveredstatements="0" conditionals="26" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="136" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="185" count="0" type="stmt"/>
+        <line num="195" count="0" type="stmt"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="210" count="0" type="stmt"/>
+        <line num="215" count="0" type="stmt"/>
+        <line num="220" count="0" type="stmt"/>
+      </file>
+      <file name="DownloadCV.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/DownloadCV.tsx">
+        <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+      </file>
+      <file name="Header.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/Header.tsx">
+        <metrics statements="28" coveredstatements="27" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="8"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="57" count="24" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="137" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="161" count="1" type="stmt"/>
+        <line num="162" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="165" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="186" count="1" type="stmt"/>
+        <line num="203" count="1" type="stmt"/>
+        <line num="212" count="1" type="stmt"/>
+        <line num="221" count="1" type="stmt"/>
+      </file>
+      <file name="Landing.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/Landing.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="246" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="246" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+      <file name="OtherSkills.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/OtherSkills.tsx">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
+      <file name="Proyects.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/Proyects.tsx">
+        <metrics statements="23" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="129" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="130" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+      </file>
+      <file name="Skills.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/Skills.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.shared">
+      <metrics statements="24" coveredstatements="24" conditionals="33" coveredconditionals="33" methods="18" coveredmethods="18"/>
+      <file name="CustomAlert.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/shared/CustomAlert.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+      </file>
+      <file name="RegularButton.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/components/shared/RegularButton.tsx">
+        <metrics statements="16" coveredstatements="16" conditionals="31" coveredconditionals="31" methods="15" coveredmethods="15"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="34" type="cond" truecount="3" falsecount="0"/>
+      </file>
+    </package>
+    <package name="src.data">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="HomeData.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/data/HomeData.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="123" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="Home.tsx" path="C:/Users/oscar/OneDrive/Escritorio/BOOTCAMP/PROYECTO PERSONALES/portafolio/src/pages/Home.tsx">
+        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

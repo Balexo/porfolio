@@ -93,7 +93,7 @@ const StyledProyectList = styled.div`
 `;
 
 const StyledProyectItem = styled.ul`
-  background-color: var(--darkGrey);
+  background-color: ${(props) => props.theme.colors.darkGrey};
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -106,7 +106,7 @@ const StyledTitleProyect = styled.h2`
   text-align: center;
   font-size: 1.8rem;
   font-style: italic;
-  color: var(--lightBeige);
+  color: ${(props) => props.theme.colors.lightBeige};
   margin: 20px 0px;
 `;
 
@@ -115,8 +115,7 @@ const StyledGitHubLink = styled.a`
   justify-content: center;
   align-items: center;
   font-size: 50px;
-
-  color: var(--mustardYellow);
+  color: ${(props) => props.theme.colors.mustardYellow};
 `;
 
 const StyledWebLink = styled.a`
@@ -146,7 +145,7 @@ const StyledIcons = styled.div`
   justify-content: center;
 
   gap: 10px;
-  color: var(--navyBlue);
+  color: ${(props) => props.theme.colors.navyBlue};
 
   @media (max-width: 768px) {
     font-size: 1.6rem;
@@ -155,7 +154,7 @@ const StyledIcons = styled.div`
 `;
 
 const StyledDescription = styled.p`
-  background-color: #8a8f91;
+  background-color: ${(props) => props.theme.colors.ligthGray};
   font-size: 1.2rem;
   margin: 1rem 1rem;
   padding: 1rem;

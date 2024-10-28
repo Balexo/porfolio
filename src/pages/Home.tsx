@@ -74,6 +74,7 @@ const StyledBody = styled.div`
   margin: -4rem 0rem 0rem 22rem;
   display: block;
   flex-direction: column;
+  background-color: ${(props) => props.theme.colors.lightBeige};
 
   @media (max-width: 768px) {
     margin: 10px 0px 0px 0px;
@@ -84,7 +85,7 @@ const StyledH1 = styled.h1`
   margin-top: 5rem;
   text-align: center;
   font-size: 3rem;
-  color: var(--navyBlue);
+  color: ${(props) => props.theme.colors.navyBlue};
 
   &.without-margin {
     margin-top: 0rem;
@@ -96,11 +97,11 @@ const CodeBackground = styled.div`
   left: 30%;
   top: -260px;
   z-index: -1;
-  font-family: "Bungee Outline", sans-serif;
+  font-family: ${(props) => props.theme.fonts.logo};
   font-weight: bold;
 
   font-size: 300px;
-  color: var(--navyBlue);
+  color: ${(props) => props.theme.colors.navBlue};
   opacity: 0.02;
   letter-spacing: 10px;
   text-transform: uppercase;

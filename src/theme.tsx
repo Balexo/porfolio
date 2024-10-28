@@ -3,7 +3,7 @@ const theme = {
     lightBeige: "#e8e4e2ff",
     gray: "#939492ff",
     slateBlue: "#475b63ff",
-    charcoal: "#394042ff",
+    ligthGray: "#8a8f91",
     silver: "#c2c2c0ff",
     steelBlue: "#384d58ff",
     dustyBlue: "#5b717cff",
@@ -16,6 +16,7 @@ const theme = {
   fonts: {
     primary: '"Raleway", sans-serif',
     landing: '"Raleway Dots", cursive',
+    logo: '"Bungee Outline", sans-serif',
   },
   fontSizes: {
     base: "1.2rem",

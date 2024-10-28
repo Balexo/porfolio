@@ -2,6 +2,7 @@ import RegularButton from "./shared/RegularButton";
 import styled from "styled-components";
 import { useEffect } from "react";
 import throttle from "lodash/throttle";
+import theme from "../theme";
 
 const DownloadCV = () => {
   const handleDownload = () => {
@@ -38,8 +39,8 @@ const DownloadCV = () => {
     <StyledDownloadCV className="StyledDownloadCV">
       <RegularButton
         onClick={handleDownload}
-        $customBackgroundColor="var(--mustardYellow)"
-        $customColor="var(--navyBlue)"
+        $customBackgroundColor={theme.colors.mustardYellow}
+        $customColor={theme.colors.navyBlue}
       >
         Descargar CV
       </RegularButton>

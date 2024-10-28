@@ -21,4 +21,7 @@ const AppStyle = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  font-family: ${(props) => props.theme.fonts.primary};
+  font-size: ${(props) => props.theme.fontSizes.base};
+  font-size-adjust: 0.58;
 `;

@@ -59,7 +59,7 @@ const StyledIcon = styled.span`
   display: flex;
   font-size: 2.5rem;
   align-self: center;
-  color: var(--navyBlue);
+  color: ${(props) => props.theme.colors.navyBlue};
 `;
 
 const SkillsText = styled.span`

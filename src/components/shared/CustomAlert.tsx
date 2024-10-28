@@ -55,10 +55,10 @@ const CloseButton = styled.button`
   }
 `;
 const ErrorMessageStyled = styled.div`
-  background-color: var(--darkRed);
+  background-color: ${(props) => props.theme.colors.darkRed};
   padding: 1rem;
 `;
 const SuccesMessageStyled = styled.div`
-  background-color: var(--darkGreen);
+  background-color: ${(props) => props.theme.colors.darkGreen};
   padding: 1rem;
 `;

@@ -97,7 +97,7 @@ export const softSkills: softSkills[] = [
   { icon: FaCalendarAlt, text: "Organizado" },
 ];
 
-interface imageObject {
+export interface imageObject {
   src: string;
   alt: string;
   width?: number;

@@ -59,14 +59,14 @@ const StyledIcon = styled.div`
   font-size: 2.5rem;
   align-self: center;
   margin-bottom: 0.5rem;
-  color: var(--navyBlue);
+  color: ${(props) => props.theme.colors.navyBlue};
 
   .skill-porcentage {
     margin-left: 1rem;
     font-size: 25px;
     display: flex;
     align-items: center;
-    color: var(--slateBlue);
+    color: ${(props) => props.theme.colors.slateBlue};
   }
 
   @media (max-width: 768px) {
@@ -81,7 +81,7 @@ const StyledIcon = styled.div`
 const ProgressBar = styled.div`
   width: 100%;
   height: 10px;
-  background-color: #ddd;
+  background-color: ${(props) => props.theme.colors.silver};
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -89,6 +89,6 @@ const ProgressBar = styled.div`
 
 const Progress = styled.div`
   height: 100%;
-  background-color: var(--navyBlue);
+  background-color: ${(props) => props.theme.colors.navyBlue};
   transition: width 0.3s ease-in-out;
 `;
